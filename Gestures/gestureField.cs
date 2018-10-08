@@ -5,6 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Shapes;
+
+using WindowsInput;
+using WindowsInput.Native;
 
 namespace Gestures
 {
@@ -21,10 +26,27 @@ namespace Gestures
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
-            recordedGestures.Add("[0,0][0,1][1,1][0,1]", () => MessageBox.Show("Test gesture one"));
-            recordedGestures.Add("[2,2][2,1]", () => MessageBox.Show("test gesture two"));
+            recordedGestures.Add("[0,0][0,1][1,1][0,1]", () => {
+                try
+                {
+                    System.Diagnostics.Process.Start(@"C:\Users\Dawid\AppData\Local\atom\atom.exe");
+                }
+                catch
+                {
+                    MessageBox.Show("The file does not exist", "Error");
+                }
+            });
+            recordedGestures.Add("[2,2][2,1]", () =>
+            {
+                InputSimulator simulator = new InputSimulator();
+                simulator.Keyboard.TextEntry("Hello World");
+            });
+            recordedGestures.Add("[0,0][1,1][2,2]", () =>
+            {
+                InputSimulator simulator = new InputSimulator();
+                simulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_A);
+            });
         }
-
         private void fillField(int size)
         {
             this.pointField.Clear();
@@ -33,7 +55,7 @@ namespace Gestures
                 List<gesturePoint> tmp = new List<gesturePoint>();
                 for (int j = 0; j < size; j++)
                 {
-                    gesturePoint pointToAdd = new gesturePoint(100, "[" + i + "," + j + "]");
+                    gesturePoint pointToAdd = new gesturePoint(50, "[" + i + "," + j + "]");
                     pointToAdd.IsLookedAt += PointToAdd_IsLookedAt;
                     tmp.Add(pointToAdd);
                 }
@@ -53,8 +75,8 @@ namespace Gestures
             {
                 if (gestureCodeBufor.Contains(gesture.Key))
                 {
-                    gesture.Value.Invoke();
                     gestureCodeBufor = "";
+                    gesture.Value.Invoke();
                 }
             }
         }

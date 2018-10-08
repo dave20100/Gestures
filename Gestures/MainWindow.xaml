@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         Topmost="True"
+        ShowInTaskbar="False"
         Title="Gestures" WindowState="Maximized" WindowStyle="None">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>

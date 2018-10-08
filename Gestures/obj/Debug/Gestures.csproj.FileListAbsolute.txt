@@ -28,3 +28,6 @@ C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.cs
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.csproj.CoreCompileInputs.cache
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.exe
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.pdb
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\WindowsInput.dll
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\WindowsInput.xml
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.csproj.CopyComplete
