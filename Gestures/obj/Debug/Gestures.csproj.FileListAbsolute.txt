@@ -13,3 +13,18 @@ C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Debug\Gestures.csproj.Generate
 C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Debug\Gestures.csproj.CoreCompileInputs.cache
 C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Debug\Gestures.exe
 C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Debug\Gestures.pdb
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\Gestures.exe.config
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\Gestures.exe
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\Gestures.pdb
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.csprojAssemblyReference.cache
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\MainWindow.g.cs
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\App.g.cs
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures_MarkupCompile.cache
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures_MarkupCompile.lref
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\MainWindow.baml
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.g.resources
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.Properties.Resources.resources
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.csproj.GenerateResource.cache
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.csproj.CoreCompileInputs.cache
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.exe
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.pdb

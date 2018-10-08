@@ -15,7 +15,7 @@ namespace Gestures
         public event EventHandler IsLookedAt;
         SolidColorBrush hovered = new SolidColorBrush(Colors.Red);
         SolidColorBrush idle = new SolidColorBrush(Colors.Black);
-        Ellipse center;
+        //Ellipse center;
         Ellipse outer;
         int size;
         public string id;
@@ -25,12 +25,12 @@ namespace Gestures
             this.size = size;
             this.id = id;
 
-            center = new Ellipse()
-            {
-                Width = size / 10,
-                Height = 10,
-                Fill = idle,
-            };
+            //center = new Ellipse()
+            //{
+            //    Width = size / 10,
+            //    Height = 10,
+            //    Fill = idle,
+            //};
             outer = new Ellipse()
             {
                 Width = size,
@@ -38,7 +38,7 @@ namespace Gestures
                 Fill = idle,
                 Opacity = 0.3
             };
-            center.IsMouseDirectlyOverChanged += MouseOverChanged;
+            //center.IsMouseDirectlyOverChanged += MouseOverChanged;
             outer.IsMouseDirectlyOverChanged += MouseOverChanged;
         }
 
@@ -46,23 +46,25 @@ namespace Gestures
         {
             if((bool)e.NewValue == true)
             {
-                center.Fill = hovered;
+                //center.Fill = hovered;
+                outer.Fill = hovered;
                 IsLookedAt?.Invoke(this, EventArgs.Empty);
             }
             else
             {
-                center.Fill = idle;
+                outer.Fill = idle;
+                //center.Fill = idle;
             }
         }
 
         public void Draw(double x, double y, Canvas toDrawOn)
         {
-            Canvas.SetLeft(center , x - (10/2));
-            Canvas.SetTop(center, y - (10/2));
+            //Canvas.SetLeft(center , x - (10/2));
+            //Canvas.SetTop(center, y - (10/2));
             Canvas.SetLeft(outer, x - this.size/2);
             Canvas.SetTop(outer, y - this.size/2);
             toDrawOn.Children.Add(outer);
-            toDrawOn.Children.Add(center);
+            //toDrawOn.Children.Add(center);
         }
         
     }

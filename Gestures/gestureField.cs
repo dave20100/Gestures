@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Gestures
@@ -10,14 +11,18 @@ namespace Gestures
     class gestureField
     {
         string gestureCodeBufor = "";
+        Dictionary<string, Action> recordedGestures;
         Canvas paintField;
         List<List<gesturePoint>> pointField;
 
         public gestureField(Canvas gestureCanv)
         {
+            recordedGestures = new Dictionary<string, Action>();
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
+            recordedGestures.Add("[0,0][0,1][1,1][0,1]", () => MessageBox.Show("Test gesture one"));
+            recordedGestures.Add("[2,2][2,1]", () => MessageBox.Show("test gesture two"));
         }
 
         private void fillField(int size)
@@ -44,7 +49,14 @@ namespace Gestures
                 gestureCodeBufor = gestureCodeBufor.Remove(0, 5);
             }
             gestureCodeBufor += ((gesturePoint)sender).id;
-            
+            foreach (var gesture in recordedGestures)
+            {
+                if (gestureCodeBufor.Contains(gesture.Key))
+                {
+                    gesture.Value.Invoke();
+                    gestureCodeBufor = "";
+                }
+            }
         }
 
         private void drawField()
@@ -56,7 +68,6 @@ namespace Gestures
                 {
                     double distX = paintField.ActualWidth / pointField.Count;
                     double distY = paintField.ActualHeight / pointField[0].Count;
-                    // wzor (polowa ekranu + (ekran / ilosc) * i i j :D 
                     pointField[i][j].Draw(distX / 2 + distX * i, distY / 2 + distY * j , this.paintField);
                 }
             }
@@ -66,6 +77,5 @@ namespace Gestures
         {
             fillField(size);
         }
-        
     }
 }
