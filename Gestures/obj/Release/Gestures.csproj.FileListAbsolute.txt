@@ -1,0 +1,15 @@
+C:\Users\Dawid\source\repos\Gestures\Gestures\bin\Release\Gestures.exe.config
+C:\Users\Dawid\source\repos\Gestures\Gestures\bin\Release\Gestures.exe
+C:\Users\Dawid\source\repos\Gestures\Gestures\bin\Release\Gestures.pdb
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.csprojAssemblyReference.cache
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\MainWindow.g.cs
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\App.g.cs
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures_MarkupCompile.cache
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures_MarkupCompile.lref
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\MainWindow.baml
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.g.resources
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.Properties.Resources.resources
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.csproj.GenerateResource.cache
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.csproj.CoreCompileInputs.cache
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.exe
+C:\Users\Dawid\source\repos\Gestures\Gestures\obj\Release\Gestures.pdb
