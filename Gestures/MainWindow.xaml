@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gestures"
         mc:Ignorable="d"
-        AllowsTransparency="True"
         Topmost="True"
         ShowInTaskbar="False"
-        Title="Gestures" WindowState="Maximized" WindowStyle="None">
+        Title="Gestures" WindowState="Maximized" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>
     </Window.Background>
