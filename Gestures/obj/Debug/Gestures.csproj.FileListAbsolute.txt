@@ -31,3 +31,21 @@ C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.pd
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\WindowsInput.dll
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\WindowsInput.xml
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\Gestures.csproj.CopyComplete
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.csprojAssemblyReference.cache
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\MainWindow.g.cs
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\App.g.cs
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures_MarkupCompile.cache
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures_MarkupCompile.lref
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\bin\Debug\Gestures.exe.config
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\bin\Debug\Gestures.exe
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\bin\Debug\Gestures.pdb
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\bin\Debug\WindowsInput.dll
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\bin\Debug\WindowsInput.xml
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\MainWindow.baml
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.g.resources
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.Properties.Resources.resources
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.csproj.GenerateResource.cache
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.csproj.CoreCompileInputs.cache
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.csproj.CopyComplete
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.exe
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.pdb

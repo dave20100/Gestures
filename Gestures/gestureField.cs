@@ -26,26 +26,9 @@ namespace Gestures
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
-            recordedGestures.Add("[0,0][0,1][1,1][0,1]", () => {
-                try
-                {
-                    System.Diagnostics.Process.Start(@"C:\Users\Dawid\AppData\Local\atom\atom.exe");
-                }
-                catch
-                {
-                    MessageBox.Show("The file does not exist", "Error");
-                }
-            });
-            recordedGestures.Add("[2,2][2,1]", () =>
-            {
-                InputSimulator simulator = new InputSimulator();
-                simulator.Keyboard.TextEntry("Hello World");
-            });
-            recordedGestures.Add("[0,0][1,1][2,2]", () =>
-            {
-                InputSimulator simulator = new InputSimulator();
-                simulator.Keyboard.ModifiedKeyStroke(VirtualKeyCode.CONTROL, VirtualKeyCode.VK_A);
-            });
+            
+            addGesture("[0,0][1,1][0,0]", 1, "Hello");
+            addGesture("[2,2][2,1]", 2, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe");
         }
         private void fillField(int size)
         {
@@ -98,6 +81,36 @@ namespace Gestures
         public void changeSize(int size)
         {
             fillField(size);
+        }
+
+        public void addGesture(string gesture, int type, string command)
+        {
+            InputSimulator simulator = new InputSimulator();
+            switch (type)
+            {
+                case 1:
+                    recordedGestures.Add(gesture, () =>
+                    {
+                        simulator.Keyboard.TextEntry(command);
+                    });
+                    break;
+                case 2:
+                    recordedGestures.Add(gesture, () =>
+                    {
+                        try
+                        {
+                            System.Diagnostics.Process.Start(command);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("The file does not exist", "Error");
+                        }
+                    });
+                    break;
+                case 3:
+                    simulator.Keyboard.KeyPress(VirtualKeyCode.BACK);
+                    break;
+            }
         }
     }
 }

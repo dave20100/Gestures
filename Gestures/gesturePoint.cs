@@ -32,6 +32,7 @@ namespace Gestures
             //};
             outer = new Ellipse()
             {
+                IsHitTestVisible = false,
                 Width = size,
                 Height = size,
                 Fill = idle,
