@@ -26,17 +26,18 @@ namespace Gestures
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
-            
-            addGesture("[0,0][1,1][0,0]", 1, "Hello");
+            //TODO make loading gestures from some kind of file with size decided by user
+            //loadGesturesFromFile();
+            addGesture("[1,0][2,0]", 1, "Hello");
             addGesture("[2,2][2,1]", 2, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe");
         }
-        private void fillField(int size)
+        private void fillField(int amountOfDots)
         {
             this.pointField.Clear();
-            for(int i = 0; i < size; i++)
+            for(int i = 0; i < amountOfDots; i++)
             {
                 List<gesturePoint> tmp = new List<gesturePoint>();
-                for (int j = 0; j < size; j++)
+                for (int j = 0; j < amountOfDots; j++)
                 {
                     gesturePoint pointToAdd = new gesturePoint(50, "[" + i + "," + j + "]");
                     pointToAdd.IsLookedAt += PointToAdd_IsLookedAt;
@@ -49,9 +50,9 @@ namespace Gestures
 
         private void PointToAdd_IsLookedAt(object sender, EventArgs e)
         {
-            if(gestureCodeBufor.Length >= pointField.Count * pointField[0].Count * 5)
+            if(gestureCodeBufor.Length >= 100)
             {
-                gestureCodeBufor = gestureCodeBufor.Remove(0, 5);
+                gestureCodeBufor = gestureCodeBufor.Remove(0, gestureCodeBufor.IndexOf(']')+1);
             }
             gestureCodeBufor += ((gesturePoint)sender).id;
             foreach (var gesture in recordedGestures)
@@ -78,9 +79,9 @@ namespace Gestures
             }
         }
 
-        public void changeSize(int size)
+        public void changeAmountOfDots(int amountOfDots)
         {
-            fillField(size);
+            fillField(amountOfDots);
         }
 
         public void addGesture(string gesture, int type, string command)

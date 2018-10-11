@@ -32,7 +32,8 @@ namespace Gestures
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             f = new gestureField(gestureCanvas);
-            f.changeSize(3);
+            f.changeAmountOfDots(3);
+            //gestureCanvas.Visibility = Visibility.Hidden;
         }
         
         
