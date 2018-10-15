@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Shapes;
-
+using System.Xml;
 using WindowsInput;
 using WindowsInput.Native;
 
@@ -16,13 +17,13 @@ namespace Gestures
     class gestureField
     {
         string gestureCodeBufor = "";
-        Dictionary<string, Action> recordedGestures;
+        List<Gesture> recordedGestures;
         Canvas paintField;
         List<List<gesturePoint>> pointField;
 
         public gestureField(Canvas gestureCanv)
         {
-            recordedGestures = new Dictionary<string, Action>();
+            recordedGestures = new List<Gesture>();
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
@@ -57,12 +58,12 @@ namespace Gestures
                 gestureCodeBufor = gestureCodeBufor.Remove(0, gestureCodeBufor.IndexOf(']')+1);
             }
             gestureCodeBufor += ((gesturePoint)sender).id;
-            foreach (var gesture in recordedGestures)
+            foreach (var record in recordedGestures)
             {
-                if (gestureCodeBufor.Contains(gesture.Key))
+                if (gestureCodeBufor.Contains(record.code))
                 {
                     gestureCodeBufor = "";
-                    gesture.Value.Invoke();
+                    record.invoke();
                 }
             }
         }
@@ -88,34 +89,18 @@ namespace Gestures
 
         public void addGesture(string gesture, int type, string command)
         {
-            InputSimulator simulator = new InputSimulator();
-            switch (type)
+            Gesture gest = new Gesture(gesture, type, command);
+            recordedGestures.Add(gest);
+        }
+
+        public void loadSetting(string settingsFileName = "Settings.xml")
+        {
+            XmlDocument settings = new XmlDocument();
+            settings.Load(settingsFileName);
+            foreach (XmlNode node in settings.DocumentElement)
             {
-                case 1:
-                    recordedGestures.Add(gesture, () =>
-                    {
-                        simulator.Keyboard.TextEntry(command);
-                    });
-                    break;
-                case 2:
-                    recordedGestures.Add(gesture, () =>
-                    {
-                        try
-                        {
-                            System.Diagnostics.Process.Start(command);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("The file does not exist", "Error");
-                        }
-                    });
-                    break;
-                case 3:
-                    VirtualKeyCode a = (VirtualKeyCode)46;
-                    
-                    simulator.Keyboard.KeyPress(a);
-                    break;
-            }
+                addGesture(node.Attributes["gestureCode"].Value, Int32.Parse( node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value);
+            }   
         }
     }
 }

@@ -70,6 +70,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Gesture.cs" />
     <Compile Include="gestureField.cs" />
     <Compile Include="gesturePoint.cs" />
     <Compile Include="MainSettings.xaml.cs">
