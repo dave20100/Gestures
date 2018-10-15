@@ -23,9 +23,7 @@ namespace Gestures
         {
             InitializeComponent();
         }
-
         
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (Application.Current.MainWindow.IsVisible)

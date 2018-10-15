@@ -5,16 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gestures"
         mc:Ignorable="d"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Bottom"
+        WindowStartupLocation="CenterScreen"
         
-        Title="MainSettings" Height="201.233" Width="756.849">
+        Title="MainSettings" Height="201.233" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="193" Click="Button_Click" Background="Beige" Height="169" />
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="185" Click="Button_Click" Background="Beige" Height="169" Margin="193,0,0,0" />
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="185" Click="Button_Click" Background="Beige" Height="169" Margin="378,0,0,0" />
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="185" Click="Button_Click" Background="Beige" Height="169" Margin="563,0,0,0" />
-
-
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="Button_Click" Background="Beige" Height="169" />
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="Button_Click" Background="Beige" Height="169" Margin="200,0,0,0" />
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="Button_Click" Background="Beige" Height="169" Margin="400,0,0,0" />
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="Button_Click" Background="Beige" Height="169" Margin="600,0,0,0" />
     </Grid>
 </Window>

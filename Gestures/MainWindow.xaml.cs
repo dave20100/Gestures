@@ -32,9 +32,12 @@ namespace Gestures
             }
             InitializeComponent();
             Loaded += MainWindow_Loaded;
-            MainSettings okno = new MainSettings();
-            okno.Show();
-            okno.Closed += Okno_Closed;
+            MainSettings settingsWindow = new MainSettings()
+            {
+                VerticalAlignment = VerticalAlignment.Center
+            };
+            settingsWindow.Show();
+            settingsWindow.Closed += Okno_Closed;
         }
 
         private void Okno_Closed(object sender, EventArgs e)
