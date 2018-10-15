@@ -27,11 +27,6 @@ namespace Gestures
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
-            //TODO make loading gestures from some kind of file with size decided by user
-            //loadGesturesFromFile();
-            addGesture("[1,1][2,2]", 1, "Hello");
-            addGesture("[2,2][2,1]", 2, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe");
-            addGesture("[0,0][1,0][2,0]", 3, "Q");
         }
 
         private void fillField(int amountOfDots)
@@ -97,10 +92,20 @@ namespace Gestures
         {
             XmlDocument settings = new XmlDocument();
             settings.Load(settingsFileName);
+            int countBad = 0;
             foreach (XmlNode node in settings.DocumentElement)
             {
-                addGesture(node.Attributes["gestureCode"].Value, Int32.Parse( node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value);
-            }   
+                try
+                {
+                    addGesture(node.Attributes["gestureCode"].Value, Int32.Parse(node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value);
+                }
+                catch
+                {
+                    countBad++;
+                }
+            }
+            MessageBox.Show(countBad.ToString(), "Amount of bad gestures");
+            
         }
     }
 }
