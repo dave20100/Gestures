@@ -28,9 +28,11 @@ namespace Gestures
             fillField(3);
             //TODO make loading gestures from some kind of file with size decided by user
             //loadGesturesFromFile();
-            addGesture("[1,0][2,0]", 1, "Hello");
+            addGesture("[1,1][2,2]", 1, "Hello");
             addGesture("[2,2][2,1]", 2, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe");
+            addGesture("[0,0][1,0][2,0]", 3, "Q");
         }
+
         private void fillField(int amountOfDots)
         {
             this.pointField.Clear();
@@ -109,7 +111,9 @@ namespace Gestures
                     });
                     break;
                 case 3:
-                    simulator.Keyboard.KeyPress(VirtualKeyCode.BACK);
+                    VirtualKeyCode a = (VirtualKeyCode)46;
+                    
+                    simulator.Keyboard.KeyPress(a);
                     break;
             }
         }

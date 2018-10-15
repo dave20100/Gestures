@@ -27,13 +27,21 @@ namespace Gestures
             
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            
+            MainSettings okno = new MainSettings();
+            okno.Show();
+            okno.Closed += Okno_Closed;
+        }
+
+        private void Okno_Closed(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             f = new gestureField(gestureCanvas);
             f.changeAmountOfDots(3);
-            //gestureCanvas.Visibility = Visibility.Hidden;
         }
         
         
