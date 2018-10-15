@@ -26,16 +26,13 @@ namespace Gestures
         gestureField mainGestureField;
         public MainWindow()
         {
-            if (!File.Exists("Settings.xml"))
-            {
-                generateDefaultSettings();
-            }
+            //if (!File.Exists("Settings.xml"))
+            //{
+            generateDefaultSettings();
+            //}
             InitializeComponent();
             Loaded += MainWindow_Loaded;
-            MainSettings settingsWindow = new MainSettings()
-            {
-                VerticalAlignment = VerticalAlignment.Center
-            };
+            MainSettings settingsWindow = new MainSettings();
             settingsWindow.Show();
             settingsWindow.Closed += Okno_Closed;
         }
@@ -49,9 +46,9 @@ namespace Gestures
         {
             mainGestureField = new gestureField(gestureCanvas);
             mainGestureField.changeAmountOfDots(3);
-            mainGestureField.loadSetting();
+            mainGestureField.loadSettings();
         }
-        
+
         private void generateDefaultSettings()
         {
             XmlDocument settings = new XmlDocument();
@@ -63,7 +60,7 @@ namespace Gestures
             XmlAttribute gestureType = settings.CreateAttribute("gestureType");
             XmlAttribute gestureCommand = settings.CreateAttribute("gestureCommand");
 
-            gestureCode.Value = "[0,0][1,0]";
+            gestureCode.Value = "[1,1][2,2]";
             gestureType.Value = "1";
             gestureCommand.Value = "Enter";
             gesture.Attributes.Append(gestureCode);
@@ -88,9 +85,9 @@ namespace Gestures
             XmlAttribute gestureType2 = settings.CreateAttribute("gestureType");
             XmlAttribute gestureCommand2 = settings.CreateAttribute("gestureCommand");
 
-            gestureCode2.Value = "[2,2][2,1][1,1]";
+            gestureCode2.Value = "[1,1][1,1]";
             gestureType2.Value = "3";
-            gestureCommand2.Value = "Enter";
+            gestureCommand2.Value = "Return";
             gesture2.Attributes.Append(gestureCode2);
             gesture2.Attributes.Append(gestureType2);
             gesture2.Attributes.Append(gestureCommand2);
@@ -99,6 +96,5 @@ namespace Gestures
             root.AppendChild(gesture2);
             settings.Save("Settings.xml");
         }
-        
     }
 }

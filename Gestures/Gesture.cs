@@ -56,7 +56,6 @@ namespace Gestures
                     break;
             }
         }
-        
         public void invoke()
         {
             this.action.Invoke();

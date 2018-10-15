@@ -52,7 +52,9 @@ namespace Gestures
             {
                 gestureCodeBufor = gestureCodeBufor.Remove(0, gestureCodeBufor.IndexOf(']')+1);
             }
-            gestureCodeBufor += ((gesturePoint)sender).id;
+            if (!gestureCodeBufor.EndsWith(((gesturePoint)sender).id)){
+                gestureCodeBufor += ((gesturePoint)sender).id;
+            }
             foreach (var record in recordedGestures)
             {
                 if (gestureCodeBufor.Contains(record.code))
@@ -88,7 +90,7 @@ namespace Gestures
             recordedGestures.Add(gest);
         }
 
-        public void loadSetting(string settingsFileName = "Settings.xml")
+        public void loadSettings(string settingsFileName = "Settings.xml")
         {
             XmlDocument settings = new XmlDocument();
             settings.Load(settingsFileName);
