@@ -51,3 +51,5 @@ C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.exe
 C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\Gestures.pdb
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\MainSettings.g.cs
 C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\MainSettings.baml
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\MainSettings.g.cs
+C:\Users\DMIKOWSKI\Desktop\PINZ\gestures\Gestures\obj\Debug\MainSettings.baml

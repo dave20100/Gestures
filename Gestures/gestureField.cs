@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -16,6 +17,10 @@ namespace Gestures
 {
     class gestureField
     {
+        Timer gestureTime = new Timer()
+        {
+            Interval = 2000
+        };
         string gestureCodeBufor = "";
         List<Gesture> recordedGestures;
         Canvas paintField;
@@ -23,10 +28,16 @@ namespace Gestures
 
         public gestureField(Canvas gestureCanv)
         {
+            gestureTime.Elapsed += GestureTime_Elapsed;
             recordedGestures = new List<Gesture>();
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
             fillField(3);
+        }
+
+        private void GestureTime_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            gestureCodeBufor = "";
         }
 
         private void fillField(int amountOfDots)
@@ -39,11 +50,18 @@ namespace Gestures
                 {
                     gesturePoint pointToAdd = new gesturePoint(50, "[" + i + "," + j + "]");
                     pointToAdd.IsLookedAt += PointToAdd_IsLookedAt;
+                    pointToAdd.IsLookedAt += PointToAdd_LookedAtResetTimer;
                     tmp.Add(pointToAdd);
                 }
                 this.pointField.Add(tmp);
             }
             drawField();
+        }
+
+        private void PointToAdd_LookedAtResetTimer(object sender, EventArgs e)
+        {
+            gestureTime.Stop();
+            gestureTime.Start();
         }
 
         private void PointToAdd_IsLookedAt(object sender, EventArgs e)
@@ -86,6 +104,14 @@ namespace Gestures
 
         public void addGesture(string gesture, int type, string command)
         {
+            foreach(Gesture tmpG in recordedGestures)
+            {
+                if (tmpG.code.Contains(gesture) || gesture.Contains(tmpG.code))
+                {
+                    MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture} and {tmpG.code}", "Can't add gesture");
+                    return;
+                }
+            }
             Gesture gest = new Gesture(gesture, type, command);
             recordedGestures.Add(gest);
         }
