@@ -9,7 +9,7 @@
         
         Title="MainSettings" Height="200" Width="800">
     <Grid>
-        <Button Content="Hide/Show gesture" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="Button_Click" Background="Beige" Height="169" />
+        <Button Content="Hide/Show gesture field" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="Button_Click" Background="Beige" Height="169" />
         <Button Content="Mouse mode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"  Background="Beige" Height="169" Margin="200,0,0,0" />
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"  Background="Beige" Height="169" Margin="400,0,0,0" />
         <Button Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Background="Beige" Height="169" Margin="600,0,0,0" />

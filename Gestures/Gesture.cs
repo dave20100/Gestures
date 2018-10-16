@@ -51,9 +51,11 @@ namespace Gestures
 
                         Key key;
                         Enum.TryParse(command, out key);
-                        List<VirtualKeyCode> iii = new List<VirtualKeyCode>() { };
+                        List<VirtualKeyCode> modifiers = new List<VirtualKeyCode>() { };
+                        List<VirtualKeyCode> keys = new List<VirtualKeyCode>() { };
+                        
                         VirtualKeyCode k = (VirtualKeyCode)KeyInterop.VirtualKeyFromKey(key);
-                        simulator.Keyboard.ModifiedKeyStroke(iii, k);
+                        simulator.Keyboard.ModifiedKeyStroke(modifiers, keys);
                         //simulator.Keyboard.KeyPress(k);
                     };
                     break;
