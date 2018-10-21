@@ -19,12 +19,15 @@ namespace Gestures
     /// </summary>
     public partial class MainSettings : Window
     {
+        public event EventHandler settingsWindowSavedChanges;
+
         public MainSettings()
         {
             InitializeComponent();
+
         }
         
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void HideFieldButton(object sender, RoutedEventArgs e)
         {
             if (Application.Current.MainWindow.IsVisible)
             {
@@ -41,7 +44,13 @@ namespace Gestures
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             GestureSettingsWindow settingsWindow = new GestureSettingsWindow();
+            settingsWindow.SaveChanges += SettingsWindow_SaveChanges;
             settingsWindow.Show();
+        }
+
+        private void SettingsWindow_SaveChanges(object sender, EventArgs e)
+        {
+            settingsWindowSavedChanges?.Invoke(this, EventArgs.Empty);
         }
     }
 }

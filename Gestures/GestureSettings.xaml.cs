@@ -20,10 +20,13 @@ namespace Gestures
     /// </summary>
     public partial class GestureSettingsWindow : Window
     {
+        public event EventHandler SaveChanges;
+
         public GestureSettingsWindow()
         {
             InitializeComponent();
             listOfActions.Items.Add("Number Code Type Parameter");
+            
             loadSettings();
             //MessageBox.Show(listOfActions.Items[1].ToString());
         }
@@ -47,13 +50,51 @@ namespace Gestures
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void CloseButton(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void EditOrAddButton(object sender, RoutedEventArgs e)
         {
+
+            if(listOfActions.SelectedItem != null && listOfActions.SelectedItem != listOfActions.Items[0])
+            {
+                listOfActions.Items.Remove(listOfActions.SelectedItem);
+            }
+
+        }
+
+        private void AcceptChangesButton(object sender, RoutedEventArgs e)
+        {
+            XmlDocument settings = new XmlDocument();
+            XmlNode root = settings.CreateElement("gestures");
+            settings.AppendChild(root);
+            foreach (var gestureParameters in listOfActions.Items)
+            {
+                if(gestureParameters == listOfActions.Items[0])
+                {
+                    continue;
+                }
+                XmlNode gesture = settings.CreateElement("gesture");
+                XmlAttribute gestureCode = settings.CreateAttribute("gestureCode");
+                XmlAttribute gestureType = settings.CreateAttribute("gestureType");
+                XmlAttribute gestureCommand = settings.CreateAttribute("gestureCommand");
+
+                List<string> listed = gestureParameters.ToString().Split().ToList<string>();
+
+                gestureCode.Value = listed[1];
+                gestureType.Value = listed[2];
+                gestureCommand.Value = listed[3];
+                gesture.Attributes.Append(gestureCode);
+                gesture.Attributes.Append(gestureType);
+                gesture.Attributes.Append(gestureCommand);
+                gestureCode = settings.CreateAttribute("gestureCode");
+
+                root.AppendChild(gesture);
+            }
+            settings.Save("Settings.xml");
+            SaveChanges?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -33,8 +33,15 @@ namespace Gestures
             InitializeComponent();
             Loaded += MainWindow_Loaded;
             MainSettings settingsWindow = new MainSettings();
+            settingsWindow.settingsWindowSavedChanges += SettingsWindow_settingsWindowSavedChanges;
             settingsWindow.Show();
             settingsWindow.Closed += Okno_Closed;
+            
+        }
+
+        private void SettingsWindow_settingsWindowSavedChanges(object sender, EventArgs e)
+        {
+            mainGestureField.loadSettings();
         }
 
         private void Okno_Closed(object sender, EventArgs e)

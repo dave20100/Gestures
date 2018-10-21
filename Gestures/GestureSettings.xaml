@@ -10,12 +10,12 @@
         Title="Gesture Settings" Height="500" Width="800">
     <Grid
         Background="Beige">
-        <Button Background="LightGray" Content="Close" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="Button_Click"/>
-        <Button Background="LightGray" Content="Accept" HorizontalAlignment="Left" Margin="607,413,0,0" VerticalAlignment="Top" Width="175" Height="46"/>
+        <Button Background="LightGray" Content="Close" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="CloseButton"/>
+        <Button Background="LightGray" Content="Accept" HorizontalAlignment="Left" Margin="607,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="AcceptChangesButton"/>
         <ListBox Name="listOfActions" HorizontalAlignment="Left" Height="398" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
             
         </ListBox>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="315,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="Button_Click_1"/>
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="315,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="EditOrAddButton"/>
 
     </Grid>
 </Window>

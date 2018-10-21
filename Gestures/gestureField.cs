@@ -118,6 +118,7 @@ namespace Gestures
 
         public void loadSettings(string settingsFileName = "Settings.xml")
         {
+            recordedGestures.Clear();
             XmlDocument settings = new XmlDocument();
             settings.Load(settingsFileName);
             int countBad = 0;
