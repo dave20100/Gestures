@@ -32,6 +32,9 @@ namespace Gestures
         }
         public void loadSettings(string settingsFileName = "Settings.xml")
         {
+            listOfActions.Items.Clear();
+
+            listOfActions.Items.Add("Number Code Type Parameter");
             XmlDocument settings = new XmlDocument();
             settings.Load(settingsFileName);
             int count = 1;
@@ -95,6 +98,7 @@ namespace Gestures
             }
             settings.Save("Settings.xml");
             SaveChanges?.Invoke(this, EventArgs.Empty);
+            loadSettings();
         }
     }
 }

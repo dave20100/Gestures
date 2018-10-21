@@ -28,7 +28,7 @@ namespace Gestures
         {
             //if (!File.Exists("Settings.xml"))
             //{
-            generateDefaultSettings();
+                generateDefaultSettings();
             //}
             InitializeComponent();
             Loaded += MainWindow_Loaded;
