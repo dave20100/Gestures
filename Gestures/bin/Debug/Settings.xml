@@ -1,5 +1,5 @@
 <gestures>
   <gesture gestureCode="[1,1][2,2]" gestureType="1" gestureCommand="Enter" />
   <gesture gestureCode="[0,0][0,1][1,0]" gestureType="2" gestureCommand="C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe" />
-  <gesture gestureCode="[1,1][2,2][0,0]" gestureType="3" gestureCommand="Return" />
+  <gesture gestureCode="[0,0][1,0][1,1]" gestureType="3" gestureCommand="Return" />
 </gestures>

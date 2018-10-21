@@ -1,0 +1,21 @@
+﻿<Window x:Class="Gestures.GestureSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gestures"
+        mc:Ignorable="d"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Title="Gesture Settings" Height="500" Width="800">
+    <Grid
+        Background="Beige">
+        <Button Background="LightGray" Content="Close" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="Button_Click"/>
+        <Button Background="LightGray" Content="Accept" HorizontalAlignment="Left" Margin="607,413,0,0" VerticalAlignment="Top" Width="175" Height="46"/>
+        <ListBox Name="listOfActions" HorizontalAlignment="Left" Height="398" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+            
+        </ListBox>
+        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="315,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

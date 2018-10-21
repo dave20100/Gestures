@@ -132,7 +132,7 @@ namespace Gestures
                     countBad++;
                 }
             }
-            MessageBox.Show(countBad.ToString(), "Amount of bad gestures");
+            //MessageBox.Show(countBad.ToString(), "Amount of bad gestures");
             
         }
     }

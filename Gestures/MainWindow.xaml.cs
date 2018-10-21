@@ -85,7 +85,7 @@ namespace Gestures
             XmlAttribute gestureType2 = settings.CreateAttribute("gestureType");
             XmlAttribute gestureCommand2 = settings.CreateAttribute("gestureCommand");
 
-            gestureCode2.Value = "[1,1][2,2][0,0]";
+            gestureCode2.Value = "[0,0][1,0][1,1]";
             gestureType2.Value = "3";
             gestureCommand2.Value = "Return";
             gesture2.Attributes.Append(gestureCode2);
