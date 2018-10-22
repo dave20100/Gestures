@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,36 +22,24 @@ namespace Gestures
     public partial class GestureSettingsWindow : Window
     {
         public event EventHandler SaveChanges;
+        ObservableCollection<Gesture> listOfGestures = new ObservableCollection<Gesture>();
 
         public GestureSettingsWindow()
         {
             InitializeComponent();
-            listOfActions.Items.Add("Number Code Type Parameter");
-            
+            listOfGestures.Add(new Gesture("[2,2]", 1, "ASDAS"));
+            listOfGesturesToShow.ItemsSource = listOfGestures;
             loadSettings();
-            //MessageBox.Show(listOfActions.Items[1].ToString());
         }
         public void loadSettings(string settingsFileName = "Settings.xml")
         {
-            listOfActions.Items.Clear();
-
-            listOfActions.Items.Add("Number Code Type Parameter");
+            listOfGestures.Clear();
             XmlDocument settings = new XmlDocument();
             settings.Load(settingsFileName);
-            int count = 1;
             foreach (XmlNode node in settings.DocumentElement)
             {
-                try
-                {
-                    listOfActions.Items.Add(count + ": " + node.Attributes["gestureCode"].Value + " " + Int32.Parse(node.Attributes["gestureType"].Value) + " " + node.Attributes["gestureCommand"].Value);
-                }
-                catch
-                {
-                }
-                count++;
+                listOfGestures.Add(new Gesture(node.Attributes["gestureCode"].Value, Int32.Parse(node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value));   
             }
-            //MessageBox.Show(countBad.ToString(), "Amount of bad gestures");
-
         }
 
         private void CloseButton(object sender, RoutedEventArgs e)
@@ -58,14 +47,12 @@ namespace Gestures
             this.Close();
         }
 
-        private void EditOrAddButton(object sender, RoutedEventArgs e)
+        private void RemoveButton(object sender, RoutedEventArgs e)
         {
-
-            if(listOfActions.SelectedItem != null && listOfActions.SelectedItem != listOfActions.Items[0])
+            if(listOfGesturesToShow.SelectedItem != null)
             {
-                listOfActions.Items.Remove(listOfActions.SelectedItem);
+                listOfGestures.Remove(listOfGesturesToShow.SelectedItem as Gesture);
             }
-
         }
 
         private void AcceptChangesButton(object sender, RoutedEventArgs e)
@@ -73,22 +60,16 @@ namespace Gestures
             XmlDocument settings = new XmlDocument();
             XmlNode root = settings.CreateElement("gestures");
             settings.AppendChild(root);
-            foreach (var gestureParameters in listOfActions.Items)
+            foreach (var gestureParameters in listOfGestures)
             {
-                if(gestureParameters == listOfActions.Items[0])
-                {
-                    continue;
-                }
                 XmlNode gesture = settings.CreateElement("gesture");
                 XmlAttribute gestureCode = settings.CreateAttribute("gestureCode");
                 XmlAttribute gestureType = settings.CreateAttribute("gestureType");
                 XmlAttribute gestureCommand = settings.CreateAttribute("gestureCommand");
-
-                List<string> listed = gestureParameters.ToString().Split().ToList<string>();
-
-                gestureCode.Value = listed[1];
-                gestureType.Value = listed[2];
-                gestureCommand.Value = listed[3];
+                
+                gestureCode.Value = gestureParameters.code;
+                gestureType.Value = gestureParameters.type.ToString();
+                gestureCommand.Value = gestureParameters.command;
                 gesture.Attributes.Append(gestureCode);
                 gesture.Attributes.Append(gestureType);
                 gesture.Attributes.Append(gestureCommand);
@@ -99,6 +80,22 @@ namespace Gestures
             settings.Save("Settings.xml");
             SaveChanges?.Invoke(this, EventArgs.Empty);
             loadSettings();
+            MessageBox.Show("Changes Saved");
+        }
+
+        private void AddButtonClick(object sender, RoutedEventArgs e)
+        {
+            //todo some generator of gesture
+            Gesture gesture = new Gesture("[0,2]", 1, "AAA");
+            foreach (Gesture tmpG in listOfGestures)
+            {
+                if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
+                {
+                    MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
+                    return;
+                }
+            }
+            listOfGestures.Add(gesture);
         }
     }
 }

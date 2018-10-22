@@ -8,14 +8,20 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         Title="Gesture Settings" Height="500" Width="800">
-    <Grid
-        Background="Beige">
+    <Grid Background="Beige">
+        <ListView Name="listOfGesturesToShow" Margin="0,0,0,61">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Code" Width="300" DisplayMemberBinding="{Binding code}" />
+                    <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding type}" />
+                    <GridViewColumn Header="Parameter" Width="390" DisplayMemberBinding="{Binding command}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
         <Button Background="LightGray" Content="Close" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="CloseButton"/>
         <Button Background="LightGray" Content="Accept" HorizontalAlignment="Left" Margin="607,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="AcceptChangesButton"/>
-        <ListBox Name="listOfActions" HorizontalAlignment="Left" Height="398" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
-            
-        </ListBox>
-        <Button Content="Edytuj" HorizontalAlignment="Left" Margin="315,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="EditOrAddButton"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="190,413,0,0" VerticalAlignment="Top" Width="175" Height="46" Click="RemoveButton"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="384,413,0,0" VerticalAlignment="Top" Width="204" Height="46" Click="AddButtonClick"/>
 
     </Grid>
 </Window>

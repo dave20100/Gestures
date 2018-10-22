@@ -12,9 +12,9 @@ namespace Gestures
 {
     class Gesture
     {
-        public string code;
-        public int type; 
-        public string command;
+        public string code { get; set; }
+        public int type { get; set; }
+        public string command { get; set; }
         Action action;
 
         public Gesture(string code, int type, string command)
