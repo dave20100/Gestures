@@ -20,7 +20,7 @@
         </ListView>
         <Button Content="Close" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="CloseButton"/>
         <Button Content="Remove" HorizontalAlignment="Left" Margin="165,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="RemoveButton"/>
-        <Button Content="Edit" HorizontalAlignment="Left" Margin="322,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AddButtonClick"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="322,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="EditButtonClick"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="477,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AddButtonClick"/>
         <Button Content="Accept" HorizontalAlignment="Left" Margin="632,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AcceptChangesButton"/>
 

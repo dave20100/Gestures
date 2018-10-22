@@ -97,3 +97,5 @@ C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\Gestures.csp
 C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\Gestures.csproj.CopyComplete
 C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\Gestures.exe
 C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\Gestures.pdb
+C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\GestureAdderAndEditor.g.cs
+C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\GestureAdderAndEditor.baml

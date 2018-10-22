@@ -61,6 +61,9 @@
     <Compile Include="GestureSettings.xaml.cs">
       <DependentUpon>GestureSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GestureAdderAndEditor.xaml.cs">
+      <DependentUpon>GestureAdderAndEditor.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainSettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +87,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="GestureSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GestureAdderAndEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

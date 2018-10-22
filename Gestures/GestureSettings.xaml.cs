@@ -56,6 +56,28 @@ namespace Gestures
             }
         }
 
+
+        private void EditButtonClick(object sender, RoutedEventArgs e)
+        {
+            GestureAdderAndEditor wind = new GestureAdderAndEditor();
+            wind.Show();
+        }
+
+        private void AddButtonClick(object sender, RoutedEventArgs e)
+        {
+            //todo some generator of gesture
+            Gesture gesture = new Gesture("[0,2]", 1, "AAA");
+            foreach (Gesture tmpG in listOfGestures)
+            {
+                if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
+                {
+                    MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
+                    return;
+                }
+            }
+            listOfGestures.Add(gesture);
+        }
+
         private void AcceptChangesButton(object sender, RoutedEventArgs e)
         {
             XmlDocument settings = new XmlDocument();
@@ -82,21 +104,6 @@ namespace Gestures
             SaveChanges?.Invoke(this, EventArgs.Empty);
             loadSettings();
             MessageBox.Show("Changes Saved");
-        }
-
-        private void AddButtonClick(object sender, RoutedEventArgs e)
-        {
-            //todo some generator of gesture
-            Gesture gesture = new Gesture("[0,2]", 1, "AAA");
-            foreach (Gesture tmpG in listOfGestures)
-            {
-                if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
-                {
-                    MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
-                    return;
-                }
-            }
-            listOfGestures.Add(gesture);
         }
     }
 }
