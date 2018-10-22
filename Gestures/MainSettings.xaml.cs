@@ -41,7 +41,7 @@ namespace Gestures
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ShowSettingsButton(object sender, RoutedEventArgs e)
         {
             GestureSettingsWindow settingsWindow = new GestureSettingsWindow();
             settingsWindow.SaveChanges += SettingsWindow_SaveChanges;

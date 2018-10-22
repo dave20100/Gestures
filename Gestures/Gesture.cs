@@ -48,15 +48,18 @@ namespace Gestures
                 case 3:
                     action = () =>
                     {
-
-                        Key key;
-                        Enum.TryParse(command, out key);
+                        
                         List<VirtualKeyCode> modifiers = new List<VirtualKeyCode>() { };
                         List<VirtualKeyCode> keys = new List<VirtualKeyCode>() { };
                         
-                        VirtualKeyCode k = (VirtualKeyCode)KeyInterop.VirtualKeyFromKey(key);
+                        foreach(var oneKey in command.Split(','))
+                        {
+                            Key key;
+                            Enum.TryParse(oneKey, out key);
+                            VirtualKeyCode k = (VirtualKeyCode)KeyInterop.VirtualKeyFromKey(key);
+                            modifiers.Add(k);
+                        }
                         simulator.Keyboard.ModifiedKeyStroke(modifiers, keys);
-                        //simulator.Keyboard.KeyPress(k);
                     };
                     break;
             }
