@@ -52,7 +52,7 @@ namespace Gestures
                         List<VirtualKeyCode> modifiers = new List<VirtualKeyCode>() { };
                         List<VirtualKeyCode> keys = new List<VirtualKeyCode>() { };
                         
-                        foreach(var oneKey in command.Split(','))
+                        foreach(var oneKey in command.Split('+'))
                         {
                             Key key;
                             Enum.TryParse(oneKey, out key);

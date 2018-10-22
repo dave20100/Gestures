@@ -26,10 +26,10 @@ namespace Gestures
         gestureField mainGestureField;
         public MainWindow()
         {
-            //if (!File.Exists("Settings.xml"))
-            //{
+            if (!File.Exists("Settings.xml"))
+            {
                 generateDefaultSettings();
-            //}
+            }
             InitializeComponent();
             Loaded += MainWindow_Loaded;
             MainSettings settingsWindow = new MainSettings();
@@ -61,9 +61,8 @@ namespace Gestures
             List<Gesture> listOfGesturesDefault = new List<Gesture>();
             listOfGesturesDefault.Add(new Gesture("[0,0][1,1]", 2, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe"));
             listOfGesturesDefault.Add(new Gesture("[0,0][1,0]", 1, "Nice"));
-            listOfGesturesDefault.Add(new Gesture("[0,0][0,1]", 3, "LeftCtrl,C"));
-
-            listOfGesturesDefault.Add(new Gesture("[1,1][1,2]", 3, "LeftCtrl,V"));
+            listOfGesturesDefault.Add(new Gesture("[0,0][0,1]", 3, "LeftCtrl+C"));
+            listOfGesturesDefault.Add(new Gesture("[1,1][1,2]", 3, "LeftCtrl+V"));
             XmlDocument settings = new XmlDocument();
             XmlNode root = settings.CreateElement("gestures");
             settings.AppendChild(root);
