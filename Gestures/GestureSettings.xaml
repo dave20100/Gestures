@@ -14,14 +14,15 @@
                 <GridView>
                     <GridViewColumn Header="Code" Width="300" DisplayMemberBinding="{Binding code}" />
                     <GridViewColumn Header="Type" Width="100" DisplayMemberBinding="{Binding type}" />
-                    <GridViewColumn Header="Parameter" Width="378" DisplayMemberBinding="{Binding command}" />
+                    <GridViewColumn Header="Parameter" Width="374" DisplayMemberBinding="{Binding command}" />
                 </GridView>
             </ListView.View>
         </ListView>
         <Button Content="Close" HorizontalAlignment="Left" Margin="10,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="CloseButton"/>
-        <Button Content="Remove" HorizontalAlignment="Left" Margin="190,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="RemoveButton"/>
-        <Button Content="Add" HorizontalAlignment="Left" Margin="384,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AddButtonClick"/>
-        <Button Content="Accept" HorizontalAlignment="Left" Margin="607,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AcceptChangesButton"/>
+        <Button Content="Remove" HorizontalAlignment="Left" Margin="165,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="RemoveButton"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="322,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AddButtonClick"/>
+        <Button Content="Add" HorizontalAlignment="Left" Margin="477,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AddButtonClick"/>
+        <Button Content="Accept" HorizontalAlignment="Left" Margin="632,413,0,0" VerticalAlignment="Top" Width="150" Height="46" Click="AcceptChangesButton"/>
 
     </Grid>
 </Window>

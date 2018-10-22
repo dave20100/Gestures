@@ -12,6 +12,12 @@ namespace Gestures
 {
     class Gesture
     {
+        enum Types
+        {
+            WRITE_TEXT,
+            START_APP,
+            SHORTCUT
+        }
         public string code { get; set; }
         public int type { get; set; }
         public string command { get; set; }
@@ -26,13 +32,13 @@ namespace Gestures
             InputSimulator simulator = new InputSimulator();
             switch (type)
             {
-                case 1:
+                case (int)Types.WRITE_TEXT:
                     action = () =>
                     {
                         simulator.Keyboard.TextEntry(command);
                     };
                     break;
-                case 2:
+                case (int)Types.START_APP:
                     action = () =>
                     {
                         try
@@ -45,7 +51,7 @@ namespace Gestures
                         }
                     };
                     break;
-                case 3:
+                case (int)Types.SHORTCUT:
                     action = () =>
                     {
                         

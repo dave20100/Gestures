@@ -1,5 +1,7 @@
 <gestures>
-  <gesture gestureCode="[0,0][1,1]" gestureType="2" gestureCommand="C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe" />
-  <gesture gestureCode="[0,0][1,0]" gestureType="1" gestureCommand="Nice" />
-  <gesture gestureCode="[0,0][0,1]" gestureType="3" gestureCommand="LeftCtrl+C" />
+  <gesture gestureCode="[0,0][1,1]" gestureType="1" gestureCommand="C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe" />
+  <gesture gestureCode="[0,0][1,0]" gestureType="0" gestureCommand="Nice" />
+  <gesture gestureCode="[0,0][0,1]" gestureType="2" gestureCommand="LeftCtrl+C" />
+  <gesture gestureCode="[1,1][1,2]" gestureType="2" gestureCommand="LeftCtrl+V" />
+  <gesture gestureCode="[0,1][1,1][0,1]" gestureType="2" gestureCommand="LeftCtrl+Z" />
 </gestures>
