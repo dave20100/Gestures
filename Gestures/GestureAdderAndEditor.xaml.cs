@@ -31,5 +31,10 @@ namespace Gestures
             codeBox.Text = "";
             parameterBox.Text = "";
         }
+
+        private void AcceptButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
