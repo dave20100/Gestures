@@ -28,18 +28,21 @@ namespace Gestures
             this.code = code;
             this.type = type;
             this.command = command;
+            this.action = createAction(type, command);
+        }
 
+        private Action createAction(int type, string command)
+        {
             InputSimulator simulator = new InputSimulator();
             switch (type)
             {
                 case (int)Types.WRITE_TEXT:
-                    action = () =>
+                    return () => 
                     {
                         simulator.Keyboard.TextEntry(command);
                     };
-                    break;
                 case (int)Types.START_APP:
-                    action = () =>
+                    return () =>
                     {
                         try
                         {
@@ -50,15 +53,14 @@ namespace Gestures
                             MessageBox.Show("The file does not exist", "Error");
                         }
                     };
-                    break;
                 case (int)Types.SHORTCUT:
-                    action = () =>
+                    return () =>
                     {
-                        
+
                         List<VirtualKeyCode> modifiers = new List<VirtualKeyCode>() { };
                         List<VirtualKeyCode> keys = new List<VirtualKeyCode>() { };
-                        
-                        foreach(var oneKey in command.Split('+'))
+
+                        foreach (var oneKey in command.Split('+'))
                         {
                             Key key;
                             Enum.TryParse(oneKey, out key);
@@ -67,7 +69,8 @@ namespace Gestures
                         }
                         simulator.Keyboard.ModifiedKeyStroke(modifiers, keys);
                     };
-                    break;
+                default:
+                        return () => MessageBox.Show("Error");
             }
         }
         public void invoke()

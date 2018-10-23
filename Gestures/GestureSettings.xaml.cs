@@ -66,7 +66,7 @@ namespace Gestures
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
             //todo some generator of gesture
-            Gesture gesture = new Gesture("[0,2]", 1, "AAA");
+            Gesture gesture = new Gesture("[0,2]", 0, "AAA");
             foreach (Gesture tmpG in listOfGestures)
             {
                 if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))

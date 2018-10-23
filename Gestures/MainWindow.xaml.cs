@@ -60,7 +60,7 @@ namespace Gestures
         {
             List<Gesture> listOfGesturesDefault = new List<Gesture>();
             listOfGesturesDefault.Add(new Gesture("[0,0][1,1]", 1, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe"));
-            listOfGesturesDefault.Add(new Gesture("[0,0][1,0]", 0, "Nice"));
+            listOfGesturesDefault.Add(new Gesture("[0,0][1,0]", 0, @"!@#$%^&*()_+{}<>?))"));
             listOfGesturesDefault.Add(new Gesture("[0,0][0,1]", 2, "LeftCtrl+C"));
             listOfGesturesDefault.Add(new Gesture("[1,1][1,2]", 2, "LeftCtrl+V"));
             listOfGesturesDefault.Add(new Gesture("[0,1][1,1][0,1]", 2, "LeftCtrl+Z"));

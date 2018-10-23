@@ -32,7 +32,7 @@ namespace Gestures
             recordedGestures = new List<Gesture>();
             pointField = new List<List<gesturePoint>>();
             this.paintField = gestureCanv;
-            fillField(3);
+            CreateField(3);
         }
 
         private void GestureTime_Elapsed(object sender, ElapsedEventArgs e)
@@ -40,7 +40,7 @@ namespace Gestures
             gestureCodeBufor = "";
         }
 
-        private void fillField(int amountOfDots)
+        private void CreateField(int amountOfDots)
         {
             this.pointField.Clear();
             for(int i = 0; i < amountOfDots; i++)
@@ -99,7 +99,7 @@ namespace Gestures
 
         public void changeAmountOfDots(int amountOfDots)
         {
-            fillField(amountOfDots);
+            CreateField(amountOfDots);
         }
 
         public void addGesture(string gesture, int type, string command)
@@ -120,6 +120,7 @@ namespace Gestures
         {
             recordedGestures.Clear();
             XmlDocument settings = new XmlDocument();
+
             settings.Load(settingsFileName);
             int countBad = 0;
             foreach (XmlNode node in settings.DocumentElement)
