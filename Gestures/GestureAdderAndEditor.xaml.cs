@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.Windows.Forms;
+using WindowsInput.Native;
+using WindowsInput;
 namespace Gestures
 {
     /// <summary>
@@ -32,41 +35,64 @@ namespace Gestures
         {
             paramChoseButton.Click -= chooseFile;
             paramChoseButton.Click -= inputShortcut;
+            paramChoseButton.KeyDown -= ParamChoseButton_KeyDown;
             if(typeBox.SelectedIndex == 0)
             {
+                parameterBox.Focusable = true;
                 paramChoseButton.IsEnabled = false;
                 return;
             }
             paramChoseButton.IsEnabled = true;
             if(typeBox.SelectedIndex == 1)
             {
-                paramChoseButton.Click += chooseFile; ;
+                parameterBox.Focusable = false;
+                paramChoseButton.Click += chooseFile; 
             }
             if (typeBox.SelectedIndex == 2)
             {
-                paramChoseButton.Click += inputShortcut; 
+                parameterBox.Focusable = false;
+                paramChoseButton.Click += inputShortcut;
+                paramChoseButton.KeyDown += ParamChoseButton_KeyDown;
+            }
+        }
+
+        private void ParamChoseButton_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if(e.Key == Key.Tab)
+            {
+                paramChoseButton.Focus();
+            }
+            if (parameterBox.Text == "")
+            {
+                parameterBox.Text += Enum.GetName(typeof(Key), e.Key);
+            }
+            else
+            {
+                parameterBox.Text += "+" + Enum.GetName(typeof(Key), e.Key);
             }
         }
 
         private void chooseFile(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("AAA");
+            using (var dialog = new OpenFileDialog())
+            {
+                DialogResult result = dialog.ShowDialog();
+                parameterBox.Text = dialog.FileName;
+            }
         }
+        
+
         private void inputShortcut(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("BBB");
-
+            parameterBox.Text = "";
         }
-
-
+        
+         
 
         private void TypeChanged(object sender, SelectionChangedEventArgs e)
         {
             codeBox.Text = "";
             parameterBox.Text = "";
         }
-
-        
-
     }
 }

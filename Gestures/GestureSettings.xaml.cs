@@ -60,7 +60,8 @@ namespace Gestures
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
             GestureAdderAndEditor wind = new GestureAdderAndEditor();
-            wind.Show();
+            wind.ShowDialog();
+            
         }
 
         private void AddButtonClick(object sender, RoutedEventArgs e)

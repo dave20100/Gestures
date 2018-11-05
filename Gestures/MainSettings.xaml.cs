@@ -31,7 +31,7 @@ namespace Gestures
         {
             if (Application.Current.MainWindow.IsVisible)
             {
-                ((Button)sender).Background = new SolidColorBrush(Colors.BlanchedAlmond);
+                ((Button)sender).Background = new SolidColorBrush(Colors.Gray);
                 Application.Current.MainWindow.Hide();
             }
             else
@@ -43,9 +43,16 @@ namespace Gestures
 
         private void ShowSettingsButton(object sender, RoutedEventArgs e)
         {
+            Application.Current.MainWindow.Hide();
             GestureSettingsWindow settingsWindow = new GestureSettingsWindow();
+            settingsWindow.Closed += SettingsWindow_Closed;
             settingsWindow.SaveChanges += SettingsWindow_SaveChanges;
-            settingsWindow.Show();
+            settingsWindow.ShowDialog();
+        }
+
+        private void SettingsWindow_Closed(object sender, EventArgs e)
+        {
+            Application.Current.MainWindow.Show();
         }
 
         private void SettingsWindow_SaveChanges(object sender, EventArgs e)
