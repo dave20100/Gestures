@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Windows.Forms;
 using WindowsInput.Native;
 using WindowsInput;
+using System.Collections.ObjectModel;
+
 namespace Gestures
 {
     /// <summary>
@@ -25,9 +27,9 @@ namespace Gestures
         public Gesture createdGesture { get { return new Gesture(codeBox.Text, typeBox.SelectedIndex, parameterBox.Text); } }
         public GestureAdderAndEditor()
         {
-            List<string> l = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
+            List<string> typeList = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
             InitializeComponent();
-            typeBox.ItemsSource = l;
+            typeBox.ItemsSource = typeList;
             typeBox.SelectionChanged += TypeBox_SelectionChanged;
             paramChoseButton.IsEnabled = false;
         }
@@ -36,7 +38,7 @@ namespace Gestures
         {
             paramChoseButton.Click -= chooseFile;
             paramChoseButton.Click -= inputShortcut;
-            paramChoseButton.KeyDown -= ParamChoseButton_KeyDown;
+            paramChoseButton.Click -= ParamChoseButton_KeyDown;
             if(typeBox.SelectedIndex == 0)
             {
                 parameterBox.Focusable = true;
@@ -53,20 +55,24 @@ namespace Gestures
             {
                 parameterBox.Focusable = false;
                 paramChoseButton.Click += inputShortcut;
-                paramChoseButton.KeyDown += ParamChoseButton_KeyDown;
+                paramChoseButton.Click += ParamChoseButton_KeyDown;
             }
         }
 
-        private void ParamChoseButton_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        private void ParamChoseButton_KeyDown(object sender, RoutedEventArgs e)
         {
             
-            if (parameterBox.Text == "")
+            KeyBoardKeysCombining keyw = new KeyBoardKeysCombining();
+            
+            if (keyw.ShowDialog() == true)
             {
-                parameterBox.Text += Enum.GetName(typeof(Key), e.Key);
-            }
-            else
-            {
-                parameterBox.Text += "+" + Enum.GetName(typeof(Key), e.Key);
+                List<string> resultingKeynames = keyw.returnList;
+                foreach (string keyname in resultingKeynames)
+                {
+                    parameterBox.Text += keyname + "+";
+                }
+
+                parameterBox.Text = parameterBox.Text.Remove(parameterBox.Text.Length - 1, 1);
             }
         }
 

@@ -58,5 +58,10 @@ namespace Gestures
         {
             settingsWindowSavedChanges?.Invoke(this, EventArgs.Empty);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
