@@ -22,6 +22,7 @@ namespace Gestures
     /// </summary>
     public partial class GestureAdderAndEditor : Window
     {
+        public Gesture createdGesture { get { return new Gesture(codeBox.Text, typeBox.SelectedIndex, parameterBox.Text); } }
         public GestureAdderAndEditor()
         {
             List<string> l = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
@@ -58,10 +59,7 @@ namespace Gestures
 
         private void ParamChoseButton_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if(e.Key == Key.Tab)
-            {
-                paramChoseButton.Focus();
-            }
+            
             if (parameterBox.Text == "")
             {
                 parameterBox.Text += Enum.GetName(typeof(Key), e.Key);
@@ -93,6 +91,11 @@ namespace Gestures
         {
             codeBox.Text = "";
             parameterBox.Text = "";
+        }
+
+        private void AcceptGestureButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
         }
     }
 }

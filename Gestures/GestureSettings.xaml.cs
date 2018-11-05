@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,12 +24,11 @@ namespace Gestures
     public partial class GestureSettingsWindow : Window
     {
         public event EventHandler SaveChanges;
-        ObservableCollection<Gesture> listOfGestures = new ObservableCollection<Gesture>();
+        private ObservableCollection<Gesture> listOfGestures = new ObservableCollection<Gesture>();
 
         public GestureSettingsWindow()
         {
             InitializeComponent();
-            listOfGestures.Add(new Gesture("[2,2]", 1, "ASDAS"));
             listOfGesturesToShow.ItemsSource = listOfGestures;
             loadSettings();
         }
@@ -42,6 +42,8 @@ namespace Gestures
                 listOfGestures.Add(new Gesture(node.Attributes["gestureCode"].Value, Int32.Parse(node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value));   
             }
         }
+
+        
 
         private void CloseButton(object sender, RoutedEventArgs e)
         {
@@ -59,24 +61,26 @@ namespace Gestures
 
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
-            GestureAdderAndEditor wind = new GestureAdderAndEditor();
-            wind.ShowDialog();
             
         }
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
-            //todo some generator of gesture
-            Gesture gesture = new Gesture("[0,2]", 0, "AAA");
-            foreach (Gesture tmpG in listOfGestures)
+            Gesture gesture;
+            GestureAdderAndEditor wind = new GestureAdderAndEditor();
+            if (wind.ShowDialog() == true)
             {
-                if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
+                gesture = wind.createdGesture;
+                foreach (Gesture tmpG in listOfGestures)
                 {
-                    MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
-                    return;
+                    if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
+                    {
+                        MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
+                        return;
+                    }
                 }
+                listOfGestures.Add(gesture);
             }
-            listOfGestures.Add(gesture);
         }
 
         private void AcceptChangesButton(object sender, RoutedEventArgs e)

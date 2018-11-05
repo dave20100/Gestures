@@ -24,7 +24,6 @@ namespace Gestures
         public MainSettings()
         {
             InitializeComponent();
-
         }
         
         private void HideFieldButton(object sender, RoutedEventArgs e)

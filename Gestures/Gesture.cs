@@ -10,7 +10,7 @@ using WindowsInput.Native;
 
 namespace Gestures
 {
-    class Gesture
+    public class Gesture
     {
         enum Types
         {
