@@ -10,7 +10,7 @@
     <Grid>
         <ListBox HorizontalAlignment="Left" Height="302" Margin="10,10,0,0" VerticalAlignment="Top" Width="374" Name="keyNamesList" Background="LightGray"/>
         <ListBox HorizontalAlignment="Left" Height="302" Margin="413,10,0,0" VerticalAlignment="Top" Width="369" Name="selectedKeyNamesList" Background="SlateGray"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="332,336,0,0" VerticalAlignment="Top" Width="131" Height="73" Click="Button_Click"/>
+        <Button Content="Save Shortcut" HorizontalAlignment="Left" Margin="332,336,0,0" VerticalAlignment="Top" Width="131" Height="73" Click="Button_Click"/>
 
     </Grid>
 </Window>
