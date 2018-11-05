@@ -17,6 +17,9 @@ namespace Gestures
 {
     class gestureField
     {
+        /// <summary>
+        /// Timer resetujacy kod gestu po ustalonym czasie
+        /// </summary>
         Timer gestureTime = new Timer()
         {
             Interval = 2000
@@ -116,6 +119,10 @@ namespace Gestures
             recordedGestures.Add(gest);
         }
 
+        /// <summary>
+        /// Load gestures from a settings file
+        /// </summary>
+        /// <param name="settingsFileName"></param>
         public void loadSettings(string settingsFileName = "Settings.xml")
         {
             recordedGestures.Clear();

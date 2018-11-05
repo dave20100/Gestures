@@ -21,10 +21,44 @@ namespace Gestures
     {
         public GestureAdderAndEditor()
         {
-            List<int> l = new List<int>() { 0, 1, 2 };
+            List<string> l = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
             InitializeComponent();
             typeBox.ItemsSource = l;
+            typeBox.SelectionChanged += TypeBox_SelectionChanged;
+            paramChoseButton.IsEnabled = false;
         }
+
+        private void TypeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            paramChoseButton.Click -= chooseFile;
+            paramChoseButton.Click -= inputShortcut;
+            if(typeBox.SelectedIndex == 0)
+            {
+                paramChoseButton.IsEnabled = false;
+                return;
+            }
+            paramChoseButton.IsEnabled = true;
+            if(typeBox.SelectedIndex == 1)
+            {
+                paramChoseButton.Click += chooseFile; ;
+            }
+            if (typeBox.SelectedIndex == 2)
+            {
+                paramChoseButton.Click += inputShortcut; 
+            }
+        }
+
+        private void chooseFile(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("AAA");
+        }
+        private void inputShortcut(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("BBB");
+
+        }
+
+
 
         private void TypeChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -32,9 +66,7 @@ namespace Gestures
             parameterBox.Text = "";
         }
 
-        private void AcceptButtonClick(object sender, RoutedEventArgs e)
-        {
+        
 
-        }
     }
 }

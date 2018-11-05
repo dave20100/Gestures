@@ -18,6 +18,7 @@ namespace Gestures
             START_APP,
             SHORTCUT
         }
+
         public string code { get; set; }
         public int type { get; set; }
         public string command { get; set; }
