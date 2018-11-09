@@ -109,6 +109,10 @@ namespace Gestures
         {
             foreach(Gesture tmpG in recordedGestures)
             {
+                if(tmpG == null)
+                {
+                    return;
+                }
                 if (tmpG.code.Contains(gesture) || gesture.Contains(tmpG.code))
                 {
                     MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture} and {tmpG.code}", "Can't add gesture");

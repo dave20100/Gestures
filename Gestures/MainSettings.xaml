@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Gestures"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
         
         Title="MainSettings" Height="200" Width="800">
     <Grid>

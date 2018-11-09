@@ -26,6 +26,9 @@ namespace Gestures
 
         public Gesture(string code, int type, string command)
         {
+            if (code.Contains("A")){
+                throw new Exception();
+            };
             this.code = code;
             this.type = type;
             this.command = command;

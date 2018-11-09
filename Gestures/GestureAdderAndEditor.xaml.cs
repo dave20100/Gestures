@@ -24,7 +24,20 @@ namespace Gestures
     /// </summary>
     public partial class GestureAdderAndEditor : Window
     {
-        public Gesture createdGesture { get { return new Gesture(codeBox.Text, typeBox.SelectedIndex, parameterBox.Text); } }
+        public Gesture createdGesture
+        {
+            get
+            {
+                try
+                {
+                    return new Gesture(codeBox.Text, typeBox.SelectedIndex, parameterBox.Text);
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+        }
         public GestureAdderAndEditor()
         {
             List<string> typeList = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
@@ -95,13 +108,20 @@ namespace Gestures
 
         private void TypeChanged(object sender, SelectionChangedEventArgs e)
         {
-            codeBox.Text = "";
             parameterBox.Text = "";
         }
 
         private void AcceptGestureButton_Click(object sender, RoutedEventArgs e)
         {
-            DialogResult = true;
+            if (createdGesture == null)
+            {
+                System.Windows.MessageBox.Show("Invalid code for gesture");
+            }
+            else
+            {
+                DialogResult = true;
+            }
+
         }
     }
 }
