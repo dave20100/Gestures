@@ -68,6 +68,7 @@ namespace Gestures
                 GestureAdderAndEditor wind = new GestureAdderAndEditor(gestureToEdit.type, gestureToEdit.command, gestureToEdit.code);
                 if (wind.ShowDialog() == true)
                 {
+                    listOfGestures.Remove(listOfGesturesToShow.SelectedItem as Gesture);
                     gesture = wind.createdGesture;
                     foreach (Gesture tmpG in listOfGestures)
                     {
@@ -77,7 +78,8 @@ namespace Gestures
                         }
                         if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
                         {
-                            MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
+                            MessageBox.Show($"Gesture with desired code or part of it already exists changes were not saved\n {gesture.code} and {tmpG.code}", "Can't change gesture");
+                            listOfGestures.Add(gestureToEdit);
                             return;
                         }
                     }

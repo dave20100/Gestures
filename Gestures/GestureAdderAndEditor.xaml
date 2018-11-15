@@ -9,7 +9,7 @@
         Title="Add/Edit Gesture" Height="450" Width="400"
         >
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Gesture Adder" Background="AntiqueWhite" VerticalAlignment="Top" Height="43" Width="372" TextAlignment="Center" FontSize="30"/>
+        <TextBlock Name="Titlebox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Gesture Adder" Background="AntiqueWhite" VerticalAlignment="Top" Height="43" Width="372" TextAlignment="Center" FontSize="30"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="10,58,0,0" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top" Width="84" Height="21"/>
 
