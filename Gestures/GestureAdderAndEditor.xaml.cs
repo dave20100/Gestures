@@ -115,7 +115,7 @@ namespace Gestures
         {
             if (createdGesture == null)
             {
-                System.Windows.MessageBox.Show("Invalid code for gesture");
+                System.Windows.MessageBox.Show("Invalid code or empty parameter for gesture");
             }
             else
             {

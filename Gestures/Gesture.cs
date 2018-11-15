@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Input;
 using WindowsInput;
 using WindowsInput.Native;
+using System.Text.RegularExpressions;
 
 namespace Gestures
 {
@@ -26,9 +27,14 @@ namespace Gestures
 
         public Gesture(string code, int type, string command)
         {
-            if (code.Contains("A")){
+            if (command.Equals("") || code.Equals("")){
                 throw new Exception();
-            };
+            }
+            Regex codeRegex = new Regex(@"^(\[[0-2],[0-2]\])+$");
+            if(!codeRegex.IsMatch(code)){
+                throw new Exception() ;
+            }
+
             this.code = code;
             this.type = type;
             this.command = command;

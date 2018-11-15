@@ -151,3 +151,5 @@ C:\Users\Dawid\Desktop\Praca inzynierska\the newest\gestures\Gestures\obj\Debug\
 C:\Users\Dawid\Desktop\Praca inzynierska\the newest\gestures\Gestures\obj\Debug\Gestures.csproj.CopyComplete
 C:\Users\Dawid\Desktop\Praca inzynierska\the newest\gestures\Gestures\obj\Debug\Gestures.exe
 C:\Users\Dawid\Desktop\Praca inzynierska\the newest\gestures\Gestures\obj\Debug\Gestures.pdb
+C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\KeyBoardKeysCombining.g.cs
+C:\Users\DMIKOWSKI\Desktop\PINZYNIERSKA\gestures\Gestures\obj\Debug\KeyBoardKeysCombining.baml
