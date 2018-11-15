@@ -30,7 +30,7 @@ namespace Gestures
             if (command.Equals("") || code.Equals("")){
                 throw new Exception();
             }
-            Regex codeRegex = new Regex(@"^(\[[0-2],[0-2]\])+$");
+            Regex codeRegex = new Regex(@"^(\[[0-2],[0-2]\]){2,}$");
             if(!codeRegex.IsMatch(code)){
                 throw new Exception() ;
             }
