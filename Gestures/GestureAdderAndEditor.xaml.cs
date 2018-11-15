@@ -24,6 +24,17 @@ namespace Gestures
     /// </summary>
     public partial class GestureAdderAndEditor : Window
     {
+        public GestureAdderAndEditor(int type, string param, string code)
+        {
+            List<string> typeList = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
+            InitializeComponent();
+            typeBox.ItemsSource = typeList;
+            typeBox.SelectionChanged += TypeBox_SelectionChanged;
+            typeBox.SelectedIndex = type;
+            parameterBox.Text = param;
+            codeBox.Text = code;
+
+        }
         public Gesture createdGesture
         {
             get
@@ -94,7 +105,10 @@ namespace Gestures
             using (var dialog = new OpenFileDialog())
             {
                 DialogResult result = dialog.ShowDialog();
-                parameterBox.Text = dialog.FileName;
+                if (dialog.FileName != "")
+                {
+                    parameterBox.Text = dialog.FileName;
+                }
             }
         }
         

@@ -134,9 +134,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="eye_128px_1157791_easyicon.net.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="eye_96px_1157791_easyicon.net.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

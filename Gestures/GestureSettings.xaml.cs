@@ -61,7 +61,29 @@ namespace Gestures
 
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
-            
+            if (listOfGesturesToShow.SelectedItem != null)
+            {
+                Gesture gesture;
+                Gesture gestureToEdit = listOfGesturesToShow.SelectedItem as Gesture;
+                GestureAdderAndEditor wind = new GestureAdderAndEditor(gestureToEdit.type, gestureToEdit.command, gestureToEdit.code);
+                if (wind.ShowDialog() == true)
+                {
+                    gesture = wind.createdGesture;
+                    foreach (Gesture tmpG in listOfGestures)
+                    {
+                        if (tmpG == null)
+                        {
+                            return;
+                        }
+                        if (tmpG.code.Contains(gesture.code) || gesture.code.Contains(tmpG.code))
+                        {
+                            MessageBox.Show($"Gesture with desired code or part of it already exists\n {gesture.code} and {tmpG.code}", "Can't add gesture");
+                            return;
+                        }
+                    }
+                    listOfGestures.Add(gesture);
+                }
+            }
         }
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
