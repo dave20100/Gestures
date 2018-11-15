@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using System.Windows.Shapes;
 using System.Windows.Media;
 using System.Windows.Controls;
+using WindowsInput;
+using System.Threading;
+using System.Timers;
 namespace Gestures
 {
     class gesturePoint  : UIElement
@@ -31,9 +34,23 @@ namespace Gestures
                 Opacity = 0.5
             };
             outer.IsMouseDirectlyOverChanged += MouseOverChanged;
+            outer.MouseDown += Outer_MouseDown;
         }
 
-        
+        private void Outer_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            outer.Visibility = Visibility.Hidden;
+            System.Timers.Timer hidingTimer = new System.Timers.Timer();
+            hidingTimer.Interval = 1000;
+            hidingTimer.AutoReset = false;
+            hidingTimer.Elapsed += HidingTimerElapsed;
+            hidingTimer.Start();
+        }
+
+        private void HidingTimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            Dispatcher.Invoke(() => outer.Visibility = Visibility.Visible);
+        }
 
         private void MouseOverChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
