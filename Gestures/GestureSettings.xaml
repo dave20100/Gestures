@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
+        ResizeMode="NoResize"
         Title="Gesture Settings" Height="500" Width="800">
     <Grid Background="Beige">
         <ListView Name="listOfGesturesToShow" Margin="0,0,0,61">

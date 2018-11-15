@@ -4,5 +4,5 @@
   <gesture gestureCode="[0,0][0,1]" gestureType="2" gestureCommand="LeftCtrl+C" />
   <gesture gestureCode="[1,1][1,2]" gestureType="2" gestureCommand="LeftCtrl+V" />
   <gesture gestureCode="[0,1][1,1][0,1]" gestureType="2" gestureCommand="LeftCtrl+Z" />
-  <gesture gestureCode="[0,1][2,2]" gestureType="1" gestureCommand="C:\Users\DMIKOWSKI\Documents\__VSDeploymentFailure__.txt" />
+  <gesture gestureCode="[1,1][2,1]" gestureType="0" gestureCommand="Wow" />
 </gestures>

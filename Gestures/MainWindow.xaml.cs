@@ -26,10 +26,10 @@ namespace Gestures
         gestureField mainGestureField;
         public MainWindow()
         {
-            //if (!File.Exists("Settings.xml"))
-            //{
+            if (!File.Exists("Settings.xml"))
+            {
                 generateDefaultSettings();
-            //}
+            }
             InitializeComponent();
             Loaded += MainWindow_Loaded;
             MainSettings settingsWindow = new MainSettings();

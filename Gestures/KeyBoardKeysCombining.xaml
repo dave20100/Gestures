@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gestures"
         mc:Ignorable="d"
-        Title="KeyBoardKeysCombining" Height="450" Width="800"
+        ResizeMode="NoResize"
+        Title="Create Keyboard Shortcut" Height="450" Width="800"
         Background="Beige">
     <Grid>
         <ListBox HorizontalAlignment="Left" Height="302" Margin="10,10,0,0" VerticalAlignment="Top" Width="374" Name="keyNamesList" Background="LightGray"/>

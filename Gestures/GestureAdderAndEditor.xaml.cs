@@ -121,7 +121,6 @@ namespace Gestures
             {
                 DialogResult = true;
             }
-
         }
     }
 }

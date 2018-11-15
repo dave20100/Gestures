@@ -8,11 +8,11 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         
-        Title="MainSettings" Height="200" Width="800">
+        Title="Eye Controller" Height="200" Width="800">
     <Grid>
-        <Button Content="Hide/Show gesture field" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="HideFieldButton" Background="Beige" Height="169" />
-        <Button Content="Mouse mode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"  Background="Beige" Height="169" Margin="200,0,0,0" />
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"  Background="Beige" Height="169" Margin="400,0,0,0" Click="Button_Click" />
-        <Button Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="192" Background="Beige" Height="169" Margin="600,0,0,0" Click="ShowSettingsButton" />
+        <Button Content="Hide/Show gesture field" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="HideFieldButton" Background="Beige" Height="171" />
+        <Button Content="Mouse mode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201"  Background="Beige" Height="171" Margin="200,0,0,0" />
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"  Background="Beige" Height="171" Margin="401,0,0,0" Click="Button_Click" />
+        <Button Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="193" Background="Beige" Height="171" Margin="601,0,0,0" Click="ShowSettingsButton" />
     </Grid>
 </Window>
