@@ -47,13 +47,6 @@ namespace Gestures
             }
         }
 
-        
-
-        private void CloseButton(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         protected override void OnClosing(CancelEventArgs e)
         {
             if (changesMade)
