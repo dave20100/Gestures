@@ -13,6 +13,6 @@
         <Button Content="Hide/Show gesture field" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Click="HideFieldButton" Background="Beige" Height="171" />
         <Button Content="Mouse mode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="201"  Background="Beige" Height="171" Margin="200,0,0,0" />
         <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200"  Background="Beige" Height="171" Margin="401,0,0,0" Click="Button_Click" />
-        <Button Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="193" Background="DimGray" Height="171" Margin="601,0,0,0" Click="ShowSettingsButton" />
+        <Button Content="Settings" HorizontalAlignment="Left" VerticalAlignment="Top" Width="193" Background="Beige" Height="171" Margin="601,0,0,0" Click="ShowSettingsButton" />
     </Grid>
 </Window>

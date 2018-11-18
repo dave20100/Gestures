@@ -29,6 +29,7 @@ namespace Gestures
             InitializeComponent();
             List<string> typeList = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };
             Titlebox.Text = "Gesture Editor";
+            Title = "Edit Gesture";
             typeBox.ItemsSource = typeList;
             typeBox.SelectionChanged += TypeBox_SelectionChanged;
             typeBox.SelectedIndex = type;
