@@ -33,6 +33,7 @@ namespace Gestures
             typeBox.ItemsSource = typeList;
             typeBox.SelectionChanged += TypeBox_SelectionChanged;
             typeBox.SelectedIndex = type;
+            
             parameterBox.Text = param;
             codeBox.Text = code;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
@@ -64,7 +65,6 @@ namespace Gestures
         private void TypeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             paramChoseButton.Click -= chooseFile;
-            paramChoseButton.Click -= inputShortcut;
             paramChoseButton.Click -= ParamChoseButton_KeyDown;
             if(typeBox.SelectedIndex == 0)
             {
@@ -81,7 +81,6 @@ namespace Gestures
             if (typeBox.SelectedIndex == 2)
             {
                 parameterBox.Focusable = false;
-                paramChoseButton.Click += inputShortcut;
                 paramChoseButton.Click += ParamChoseButton_KeyDown;
             }
         }
@@ -93,6 +92,7 @@ namespace Gestures
             
             if (keyw.ShowDialog() == true)
             {
+                parameterBox.Text = "";
                 List<string> resultingKeynames = keyw.returnList;
                 foreach (string keyname in resultingKeynames)
                 {
@@ -100,7 +100,7 @@ namespace Gestures
                 }
                 if (parameterBox.Text.Length > 0)
                 {
-                    parameterBox.Text = parameterBox.Text.Remove(parameterBox.Text.Length - 1, 1);
+                    parameterBox.Text = parameterBox.Text.Remove(parameterBox.Text.LastIndexOf('+'));
                 }
             }
         }
@@ -118,10 +118,7 @@ namespace Gestures
         }
         
 
-        private void inputShortcut(object sender, RoutedEventArgs e)
-        {
-            parameterBox.Text = "";
-        }
+        
         
          
 
