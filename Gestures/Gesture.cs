@@ -68,7 +68,6 @@ namespace Gestures
                     {
 
                         List<VirtualKeyCode> modifiers = new List<VirtualKeyCode>() { };
-                        List<VirtualKeyCode> keys = new List<VirtualKeyCode>() { };
 
                         foreach (var oneKey in command.Split('+'))
                         {
@@ -77,7 +76,7 @@ namespace Gestures
                             VirtualKeyCode k = (VirtualKeyCode)KeyInterop.VirtualKeyFromKey(key);
                             modifiers.Add(k);
                         }
-                        simulator.Keyboard.ModifiedKeyStroke(modifiers, keys);
+                        simulator.Keyboard.ModifiedKeyStroke(modifiers, null);                         
                     };
                 default:
                         return () => MessageBox.Show("Error");

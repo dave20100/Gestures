@@ -98,8 +98,10 @@ namespace Gestures
                 {
                     parameterBox.Text += keyname + "+";
                 }
-
-                parameterBox.Text = parameterBox.Text.Remove(parameterBox.Text.Length - 1, 1);
+                if (parameterBox.Text.Length > 0)
+                {
+                    parameterBox.Text = parameterBox.Text.Remove(parameterBox.Text.Length - 1, 1);
+                }
             }
         }
 

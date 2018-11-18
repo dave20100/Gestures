@@ -14,7 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml;
-
+using Tobii.Interaction.Framework;
+using Tobii.Interaction;
+using WindowsInput;
 namespace Gestures
 {
     /// <summary>
@@ -30,12 +32,22 @@ namespace Gestures
             {
                 generateDefaultSettings();
             }
+            Host mouseControl = ((App)Application.Current)._host;
+
+            GazePointDataStream gs = mouseControl.Streams.CreateGazePointDataStream();
+            gs.Next += Gs_Next;
             InitializeComponent();
             Loaded += MainWindow_Loaded;
             MainSettings settingsWindow = new MainSettings();
             settingsWindow.settingsWindowSavedChanges += SettingsWindow_settingsWindowSavedChanges;
             settingsWindow.Show();
             settingsWindow.Closed += Okno_Closed;
+        }
+
+        private void Gs_Next(object sender, StreamData<GazePointData> e)
+        {
+            //InputSimulator inS = new InputSimulator();
+            //inS.Mouse.MoveMouseTo(100000, e.Data.Y);
         }
 
         private void SettingsWindow_settingsWindowSavedChanges(object sender, EventArgs e)

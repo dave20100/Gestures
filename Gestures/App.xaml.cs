@@ -14,7 +14,7 @@ namespace Gestures
     /// </summary>
     public partial class App : Application
     {
-        private Host _host;
+        public Host _host;
         private WpfInteractorAgent _wpfInteractorAgent;
 
         protected override void OnStartup(StartupEventArgs e)
