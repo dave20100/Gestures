@@ -10,6 +10,9 @@ using System.Windows.Controls;
 using WindowsInput;
 using System.Threading;
 using System.Timers;
+using Tobii.Interaction.Framework;
+using Tobii.Interaction.Wpf;
+
 namespace Gestures
 {
     class gesturePoint  : UIElement
@@ -35,6 +38,8 @@ namespace Gestures
             };
             outer.IsMouseDirectlyOverChanged += MouseOverChanged;
             outer.MouseDown += Outer_MouseDown;
+            outer.SetIsGazeAware(true);
+            outer.AddHasGazeChangedHandler(Button_HasGazeChanged);
         }
 
         private void Outer_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -54,7 +59,20 @@ namespace Gestures
 
         private void MouseOverChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if((bool)e.NewValue == true)
+            
+        }
+
+        public void Draw(double x, double y, Canvas toDrawOn)
+        {
+            Canvas.SetLeft(outer, x - this.size/2);
+            Canvas.SetTop(outer, y - this.size/2);
+            toDrawOn.Children.Add(outer);
+        }
+
+
+        private void Button_HasGazeChanged(object sender, HasGazeChangedRoutedEventArgs e)
+        {
+            if ((bool)e.HasGaze == true)
             {
                 outer.Fill = hovered;
                 IsLookedAt?.Invoke(this, EventArgs.Empty);
@@ -64,13 +82,5 @@ namespace Gestures
                 outer.Fill = idle;
             }
         }
-
-        public void Draw(double x, double y, Canvas toDrawOn)
-        {
-            Canvas.SetLeft(outer, x - this.size/2);
-            Canvas.SetTop(outer, y - this.size/2);
-            toDrawOn.Children.Add(outer);
-        }
-        
     }
 }
