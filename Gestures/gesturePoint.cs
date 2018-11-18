@@ -34,7 +34,7 @@ namespace Gestures
                 Width = size,
                 Height = size,
                 Fill = idle,
-                Opacity = 0.5
+                Opacity = 0.3
             };
             outer.IsMouseDirectlyOverChanged += MouseOverChanged;
             outer.MouseDown += Outer_MouseDown;

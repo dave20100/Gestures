@@ -51,7 +51,7 @@ namespace Gestures
                 List<gesturePoint> tmp = new List<gesturePoint>();
                 for (int j = 0; j < amountOfDots; j++)
                 {
-                    gesturePoint pointToAdd = new gesturePoint(50, "[" + i + "," + j + "]");
+                    gesturePoint pointToAdd = new gesturePoint(70, "[" + i + "," + j + "]");
                     pointToAdd.IsLookedAt += PointToAdd_IsLookedAt;
                     pointToAdd.IsLookedAt += PointToAdd_LookedAtResetTimer;
                     tmp.Add(pointToAdd);
