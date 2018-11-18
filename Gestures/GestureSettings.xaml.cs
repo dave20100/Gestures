@@ -23,12 +23,14 @@ namespace Gestures
     /// </summary>
     public partial class GestureSettingsWindow : Window
     {
+        bool changesMade;
         public event EventHandler SaveChanges;
         private ObservableCollection<Gesture> listOfGestures = new ObservableCollection<Gesture>();
 
         public GestureSettingsWindow()
         {
             InitializeComponent();
+            changesMade = false;
             listOfGesturesToShow.ItemsSource = listOfGestures;
             loadSettings();
         }
@@ -50,8 +52,21 @@ namespace Gestures
             this.Close();
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (changesMade)
+            {
+                MessageBoxResult messageBoxResult = System.Windows.MessageBox.Show("Are you sure you want to close without saving", "You have unsaved changes", System.Windows.MessageBoxButton.YesNo);
+                if (messageBoxResult == MessageBoxResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            base.OnClosing(e);
+        }
         private void RemoveButton(object sender, RoutedEventArgs e)
         {
+            changesMade = true;
             if(listOfGesturesToShow.SelectedItem != null)
             {
                 listOfGestures.Remove(listOfGesturesToShow.SelectedItem as Gesture);
@@ -61,6 +76,7 @@ namespace Gestures
 
         private void EditButtonClick(object sender, RoutedEventArgs e)
         {
+            changesMade = true;
             if (listOfGesturesToShow.SelectedItem != null)
             {
                 Gesture gesture;
@@ -90,6 +106,7 @@ namespace Gestures
 
         private void AddButtonClick(object sender, RoutedEventArgs e)
         {
+            changesMade = true;
             Gesture gesture;
             GestureAdderAndEditor wind = new GestureAdderAndEditor();
             if (wind.ShowDialog() == true)
@@ -137,6 +154,7 @@ namespace Gestures
             SaveChanges?.Invoke(this, EventArgs.Empty);
             loadSettings();
             MessageBox.Show("Changes Saved");
+            this.Close();
         }
     }
 }
