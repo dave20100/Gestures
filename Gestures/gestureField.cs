@@ -132,18 +132,21 @@ namespace Gestures
             recordedGestures.Clear();
             XmlDocument settings = new XmlDocument();
 
-            settings.Load(settingsFileName);
-            int countBad = 0;
-            foreach (XmlNode node in settings.DocumentElement)
+            try
             {
-                try
+                settings.Load(settingsFileName);
+                int countBad = 0;
+                foreach (XmlNode node in settings.DocumentElement)
                 {
-                    addGesture(node.Attributes["gestureCode"].Value, Int32.Parse(node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value);
+                        addGesture(node.Attributes["gestureCode"].Value, Int32.Parse(node.Attributes["gestureType"].Value), node.Attributes["gestureCommand"].Value);
                 }
-                catch
-                {
-                    countBad++;
-                }
+            }
+            catch
+            {
+                MessageBox.Show("There was something wrong with file default settings restored");
+                MainWindow.generateDefaultSettings();
+                loadSettings();
+
             }
             //MessageBox.Show(countBad.ToString(), "Amount of bad gestures");
             

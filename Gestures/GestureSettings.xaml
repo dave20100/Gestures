@@ -10,7 +10,7 @@
         ResizeMode="NoResize"
         Title="Gesture Settings" Height="500" Width="800">
     <Grid Background="Beige">
-        <ListView Name="listOfGesturesToShow" Margin="0,0,0,61">
+        <ListView SelectionMode="Single" Name="listOfGesturesToShow" Margin="0,0,0,61">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Code" Width="300" DisplayMemberBinding="{Binding code}" />

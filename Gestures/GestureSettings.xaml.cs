@@ -33,6 +33,8 @@ namespace Gestures
             changesMade = false;
             listOfGesturesToShow.ItemsSource = listOfGestures;
             loadSettings();
+
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
         public void loadSettings(string settingsFileName = "Settings.xml")
         {
@@ -154,6 +156,7 @@ namespace Gestures
             SaveChanges?.Invoke(this, EventArgs.Empty);
             loadSettings();
             MessageBox.Show("Changes Saved");
+            changesMade = false;
             this.Close();
         }
     }

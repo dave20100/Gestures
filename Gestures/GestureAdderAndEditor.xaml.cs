@@ -34,7 +34,7 @@ namespace Gestures
             typeBox.SelectedIndex = type;
             parameterBox.Text = param;
             codeBox.Text = code;
-
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
         public Gesture createdGesture
         {
@@ -57,6 +57,7 @@ namespace Gestures
             typeBox.ItemsSource = typeList;
             typeBox.SelectionChanged += TypeBox_SelectionChanged;
             paramChoseButton.IsEnabled = false;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void TypeBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

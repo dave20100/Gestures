@@ -26,17 +26,16 @@ namespace Gestures
         gestureField mainGestureField;
         public MainWindow()
         {
-            //if (!File.Exists("Settings.xml"))
-            //{
+            if (!File.Exists("Settings.xml"))
+            {
                 generateDefaultSettings();
-            //}
+            }
             InitializeComponent();
             Loaded += MainWindow_Loaded;
             MainSettings settingsWindow = new MainSettings();
             settingsWindow.settingsWindowSavedChanges += SettingsWindow_settingsWindowSavedChanges;
             settingsWindow.Show();
             settingsWindow.Closed += Okno_Closed;
-            
         }
 
         private void SettingsWindow_settingsWindowSavedChanges(object sender, EventArgs e)
@@ -56,7 +55,7 @@ namespace Gestures
             mainGestureField.loadSettings();
         }
 
-       private void generateDefaultSettings()
+       public static void generateDefaultSettings()
         {
             List<Gesture> listOfGesturesDefault = new List<Gesture>();
             listOfGesturesDefault.Add(new Gesture("[0,0][1,1]", 1, @"C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe"));
