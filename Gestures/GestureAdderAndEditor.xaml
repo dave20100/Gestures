@@ -9,23 +9,23 @@
         Title="Add Gesture" Height="450" Width="400"
         >
     <Grid>
-        <TextBlock Name="Titlebox" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Gesture Adder" Background="AntiqueWhite" VerticalAlignment="Top" Height="43" Width="372" TextAlignment="Center" FontSize="30"/>
+        <TextBlock Name="Titlebox" HorizontalAlignment="Left" Margin="22,8,0,0" TextWrapping="Wrap" Text="Gesture Adder" Background="AntiqueWhite" VerticalAlignment="Top" Height="42" Width="350" TextAlignment="Center" FontSize="30"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="10,58,0,0" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top" Width="84" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,55,0,0" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top" Width="78" Height="20"/>
 
-        <ComboBox SelectionChanged="TypeChanged" Name="typeBox" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="372" Height="28" SelectedIndex="0"/>
+        <ComboBox SelectionChanged="TypeChanged" Name="typeBox" HorizontalAlignment="Left" Margin="22,82,0,0" VerticalAlignment="Top" Width="350" Height="27" SelectedIndex="0"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="10,162,0,0" TextWrapping="Wrap" Text="Code:" VerticalAlignment="Top" Height="20" Width="30"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,156,0,0" TextWrapping="Wrap" Text="Code:" VerticalAlignment="Top" Height="19" Width="28"/>
 
-        <TextBox Name="codeBox" TextAlignment="Center" FontSize="20" HorizontalAlignment="Left" Height="30" Margin="10,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="315" Background="BlanchedAlmond"/>
+        <TextBox Name="codeBox" TextAlignment="Center" FontSize="20" HorizontalAlignment="Left" Height="29" Margin="22,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" Background="BlanchedAlmond"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="10,265,0,0" TextWrapping="Wrap" Text="Parameter:" VerticalAlignment="Top" Height="21" Width="56"/>
+        <TextBlock HorizontalAlignment="Left" Margin="22,256,0,0" TextWrapping="Wrap" Text="Parameter:" VerticalAlignment="Top" Height="20" Width="53"/>
 
-        <TextBox Name="parameterBox" HorizontalAlignment="Left" FontSize="13" TextAlignment="Center" Height="30" Margin="10,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="315" Background="BlanchedAlmond"/>
+        <TextBox Name="parameterBox" HorizontalAlignment="Left" FontSize="13" TextAlignment="Center" Height="29" Margin="22,282,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296" Background="BlanchedAlmond"/>
 
-        <Button Content="Accept" HorizontalAlignment="Left" Margin="10,353,0,0" VerticalAlignment="Top" Width="372" Height="56" FontSize="36" Name="AcceptGestureButton" Click="AcceptGestureButton_Click"/>
-        <Button Content="Code" HorizontalAlignment="Left" Margin="330,189,0,0" VerticalAlignment="Top" Width="52" Height="30"/>
-        <Button Content="Params" HorizontalAlignment="Left" Margin="330,292,0,0" VerticalAlignment="Top" Width="52" Height="30" Name="paramChoseButton"/>
+        <Button Content="Accept" HorizontalAlignment="Left" Margin="22,341,0,0" VerticalAlignment="Top" Width="350" Height="55" FontSize="36" Name="AcceptGestureButton" Click="AcceptGestureButton_Click"/>
+        <Button Content="Code" HorizontalAlignment="Left" Margin="322,182,0,0" VerticalAlignment="Top" Width="50" Height="29"/>
+        <Button Content="Params" HorizontalAlignment="Left" Margin="322,282,0,0" VerticalAlignment="Top" Width="50" Height="29" Name="paramChoseButton"/>
 
 
     </Grid>

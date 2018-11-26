@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Threading.Tasks;
 using System.Windows.Shapes;
 using System.Windows.Media;
 using System.Windows.Controls;
-using WindowsInput;
-using System.Threading;
 using System.Timers;
-using Tobii.Interaction.Framework;
 using Tobii.Interaction.Wpf;
 
 namespace Gestures
@@ -37,19 +30,8 @@ namespace Gestures
                 Opacity = 0.3
             };
             outer.IsMouseDirectlyOverChanged += MouseOverChanged;
-            outer.MouseDown += Outer_MouseDown;
             outer.SetIsGazeAware(true);
             outer.AddHasGazeChangedHandler(Button_HasGazeChanged);
-        }
-
-        private void Outer_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-            outer.Visibility = Visibility.Hidden;
-            System.Timers.Timer hidingTimer = new System.Timers.Timer();
-            hidingTimer.Interval = 1000;
-            hidingTimer.AutoReset = false;
-            hidingTimer.Elapsed += HidingTimerElapsed;
-            hidingTimer.Start();
         }
 
         private void HidingTimerElapsed(object sender, ElapsedEventArgs e)
