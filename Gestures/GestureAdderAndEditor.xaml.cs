@@ -24,6 +24,7 @@ namespace Gestures
             codeBox.Text = code;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
+
         public Gesture createdGesture
         {
             get
@@ -38,6 +39,7 @@ namespace Gestures
                 }
             }
         }
+
         public GestureAdderAndEditor()
         {
             List<string> typeList = new List<string>() { "Simulate text", "Start program", "Keyboard shortcut" };

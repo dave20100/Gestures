@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace Gestures
 {
-    class gestureField
+    class GestureField
     {
         /// <summary>
         /// Timer resetujacy kod gestu po ustalonym czasie
@@ -19,13 +19,13 @@ namespace Gestures
         string gestureCodeBufor = "";
         List<Gesture> recordedGestures;
         Canvas paintField;
-        List<List<gesturePoint>> pointField;
+        List<List<GesturePoint>> pointField;
 
-        public gestureField(Canvas gestureCanv)
+        public GestureField(Canvas gestureCanv)
         {
             gestureTime.Elapsed += GestureTime_Elapsed;
             recordedGestures = new List<Gesture>();
-            pointField = new List<List<gesturePoint>>();
+            pointField = new List<List<GesturePoint>>();
             this.paintField = gestureCanv;
             CreateField(3);
         }
@@ -40,10 +40,10 @@ namespace Gestures
             this.pointField.Clear();
             for(int i = 0; i < amountOfDots; i++)
             {
-                List<gesturePoint> tmp = new List<gesturePoint>();
+                List<GesturePoint> tmp = new List<GesturePoint>();
                 for (int j = 0; j < amountOfDots; j++)
                 {
-                    gesturePoint pointToAdd = new gesturePoint(70, "[" + i + "," + j + "]");
+                    GesturePoint pointToAdd = new GesturePoint(70, "[" + i + "," + j + "]");
                     pointToAdd.IsLookedAt += PointToAdd_IsLookedAt;
                     pointToAdd.IsLookedAt += PointToAdd_LookedAtResetTimer;
                     tmp.Add(pointToAdd);
@@ -65,8 +65,8 @@ namespace Gestures
             {
                 gestureCodeBufor = gestureCodeBufor.Remove(0, gestureCodeBufor.IndexOf(']')+1);
             }
-            if (!gestureCodeBufor.EndsWith(((gesturePoint)sender).id)){
-                gestureCodeBufor += ((gesturePoint)sender).id;
+            if (!gestureCodeBufor.EndsWith(((GesturePoint)sender).id)){
+                gestureCodeBufor += ((GesturePoint)sender).id;
             }
             foreach (var record in recordedGestures)
             {

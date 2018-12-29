@@ -8,7 +8,7 @@ using Tobii.Interaction.Wpf;
 
 namespace Gestures
 {
-    class gesturePoint  : UIElement
+    class GesturePoint  : UIElement
     {
         public event EventHandler IsLookedAt;
         SolidColorBrush hovered = new SolidColorBrush(Colors.Red);
@@ -17,7 +17,7 @@ namespace Gestures
         int size;
         public string id;
         
-        public gesturePoint(int size, string id)
+        public GesturePoint(int size, string id)
         {
             this.size = size;
             this.id = id;

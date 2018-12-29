@@ -94,8 +94,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Gesture.cs" />
-    <Compile Include="gestureField.cs" />
-    <Compile Include="gesturePoint.cs" />
+    <Compile Include="GestureField.cs" />
+    <Compile Include="GesturePoint.cs" />
     <Compile Include="KeyBoardKeysCombining.xaml.cs">
       <DependentUpon>KeyBoardKeysCombining.xaml</DependentUpon>
     </Compile>

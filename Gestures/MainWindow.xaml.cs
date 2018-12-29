@@ -25,7 +25,7 @@ namespace Gestures
     public partial class MainWindow : Window
     {
 
-        gestureField mainGestureField;
+        GestureField mainGestureField;
         public MainWindow()
         {
             if (!File.Exists("Settings.xml"))
@@ -45,7 +45,7 @@ namespace Gestures
 
         private void SettingsWindow_settingsWindowSavedChanges(object sender, EventArgs e)
         {
-            mainGestureField = new gestureField(gestureCanvas);
+            mainGestureField = new GestureField(gestureCanvas);
             mainGestureField.loadSettings();
         }
 
@@ -56,7 +56,7 @@ namespace Gestures
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            mainGestureField = new gestureField(gestureCanvas);
+            mainGestureField = new GestureField(gestureCanvas);
             mainGestureField.changeAmountOfDots(3);
             mainGestureField.loadSettings();
         }
