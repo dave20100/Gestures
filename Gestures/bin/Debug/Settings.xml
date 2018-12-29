@@ -1,5 +1,6 @@
 <gestures>
   <gesture gestureCode="[0,0][1,1]" gestureType="1" gestureCommand="C:\Program Files (x86)\Google\Chrome\Application\Chrome.exe" />
-  <gesture gestureCode="[0,0][1,0]" gestureType="0" gestureCommand="!@#$%^&amp;*()_+{}&lt;&gt;?))" />
   <gesture gestureCode="[1,0][0,1][1,2][2,1]" gestureType="1" gestureCommand="C:\Users\Dawid\Desktop\AJIO Dawid Mikowski.pdf" />
+  <gesture gestureCode="[0,0][1,0]" gestureType="0" gestureCommand="Hello world" />
+  <gesture gestureCode="[1,1][2,2]" gestureType="0" gestureCommand="hekllow" />
 </gestures>

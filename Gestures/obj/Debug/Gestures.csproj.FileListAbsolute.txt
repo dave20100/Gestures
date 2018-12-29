@@ -182,3 +182,12 @@ C:\Users\Dawid\Desktop\Praca inzynierska\BASE DONED\gestures\Gestures\obj\Debug\
 C:\Users\Dawid\Desktop\Praca inzynierska\BASE DONED\gestures\Gestures\bin\Debug\Tobii.EyeX.Client.dll
 C:\Users\Dawid\Desktop\Praca inzynierska\BASE DONED\gestures\Gestures\bin\Debug\Tobii.Interaction.Model.dll
 C:\Users\Dawid\Desktop\Praca inzynierska\BASE DONED\gestures\Gestures\bin\Debug\Tobii.Interaction.Net.dll
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\Tobii.EyeX.Client.dll
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\Tobii.Interaction.Model.dll
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\bin\Debug\Tobii.Interaction.Net.dll
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\KeyBoardKeysCombining.g.cs
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\GestureSettings.g.cs
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\GestureAdderAndEditor.g.cs
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\KeyBoardKeysCombining.baml
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\GestureSettings.baml
+C:\Users\Dawid\Desktop\Praca inzynierska\gestures\Gestures\obj\Debug\GestureAdderAndEditor.baml

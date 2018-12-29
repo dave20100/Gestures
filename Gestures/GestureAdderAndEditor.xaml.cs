@@ -115,6 +115,19 @@ namespace Gestures
 
         private void AcceptGestureButton_Click(object sender, RoutedEventArgs e)
         {
+            AcceptAndClose();
+        }
+
+        private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if(e.Key == System.Windows.Input.Key.Enter)
+            {
+                AcceptAndClose();
+            }
+        }
+
+        private void AcceptAndClose()
+        {
             if (createdGesture == null)
             {
                 System.Windows.MessageBox.Show("Invalid code or empty parameter for gesture");
